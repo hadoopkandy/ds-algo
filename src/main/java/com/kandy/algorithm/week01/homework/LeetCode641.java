@@ -1,4 +1,4 @@
-package com.kandy.algorithm.week01;
+package com.kandy.algorithm.week01.homework;
 
 /**
  * 641. 设计循环双端队列

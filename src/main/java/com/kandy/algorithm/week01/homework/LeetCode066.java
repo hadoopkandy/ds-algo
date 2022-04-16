@@ -1,4 +1,4 @@
-package com.kandy.algorithm.week01;
+package com.kandy.algorithm.week01.homework;
 
 /**
  * 66. 加一

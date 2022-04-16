@@ -8,7 +8,7 @@ import java.util.Stack;
  *
  * 单调栈题目代码套路：
  * for 每个元素
- * while(栈顶元素与新元素不满足单调性)  累加宽表、更新答案、出栈
+ * while(栈顶元素与新元素不满足单调性)  累加宽度、更新答案、出栈
  * 入栈
  */
 public class LeetCode084 {

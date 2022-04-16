@@ -1,4 +1,4 @@
-package com.kandy.algorithm.week01;
+package com.kandy.algorithm.week01.homework;
 
 import com.kandy.algorithm.leetcode.ListNode;
 
