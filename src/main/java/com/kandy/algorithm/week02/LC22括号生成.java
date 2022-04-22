@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * 22.括号生成
+ */
 public class LC22括号生成 {
     // 分治解法
     public List<String> generateParenthesis(int n) {

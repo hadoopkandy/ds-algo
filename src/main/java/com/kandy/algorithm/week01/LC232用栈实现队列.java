@@ -33,7 +33,7 @@ public class LC232用栈实现队列 {
             }
             return outStack.peek();
         }
-
+        //两个栈都可能存数据
         public boolean empty() {
             return inStack.isEmpty() && outStack.isEmpty();
         }

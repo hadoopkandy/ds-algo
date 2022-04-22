@@ -3,7 +3,7 @@ package com.kandy.algorithm.week02;
 /**
  * 50. Pow(x, n)
  */
-public class LC50x的次方Pow函数 {
+public class LC50x的n次方Pow函数 {
     // 分治解法
     public double myPow(double x, int n) {
         if (n == 0) return 1;
