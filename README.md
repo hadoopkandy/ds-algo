@@ -4,9 +4,7 @@
 * 实现一个大小固定的有序数组，支持动态增删改操作
 * 实现两个有序数组合并为一个有序数组
 
-&ensp;&ensp;&ensp;&ensp;[删除有序数组中的重复项](src/main/java/com/kandy/algorithm/week01/LeetCode026.java) 
-&ensp;&ensp;&ensp;&ensp;[移动零](src/main/java/com/kandy/algorithm/week01/LeetCode283.java) 
-&ensp;&ensp;&ensp;&ensp;[合并有序数组](src/main/java/com/kandy/algorithm/week01/LeetCode088.java) 
+&ensp;&ensp;&ensp;&ensp;[合并有序数组](src/main/java/com/kandy/algorithm/week01/LC88合并两个有序数组.java) 
 
 
 
@@ -16,10 +14,10 @@
 * 实现两个有序的链表合并为一个有序链表
 * 实现求链表的中间结点
 
-&ensp;&ensp;&ensp;&ensp;[反转链表](src/main/java/com/kandy/algorithm/week01/LeetCode206.java) 
-&ensp;&ensp;&ensp;&ensp;[K个一组翻转链表](src/main/java/com/kandy/algorithm/week01/LeetCode025.java) 
-&ensp;&ensp;&ensp;&ensp;[环形链表](src/main/java/com/kandy/algorithm/week01/LeetCode141.java) 
-&ensp;&ensp;&ensp;&ensp;[环形链表 II](src/main/java/com/kandy/algorithm/week01/LeetCode142.java) 
+&ensp;&ensp;&ensp;&ensp;[反转链表](src/main/java/com/kandy/algorithm/week01/LC206反转链表.java) 
+&ensp;&ensp;&ensp;&ensp;[K个一组翻转链表](src/main/java/com/kandy/algorithm/week01/LC25K个一组翻转链表.java) 
+&ensp;&ensp;&ensp;&ensp;[环形链表](src/main/java/com/kandy/algorithm/week01/LC141环形链表.java) 
+&ensp;&ensp;&ensp;&ensp;[环形链表 II](src/main/java/com/kandy/algorithm/week01/LC142环形链表II.java) 
 
 
 
@@ -30,13 +28,13 @@
 * 用链表实现一个链式栈
 * 编程模拟实现一个浏览器的前进、后退功能
 
-&ensp;&ensp;&ensp;&ensp;[有效的括号](src/main/java/com/kandy/algorithm/week01/LeetCode020.java) 
-&ensp;&ensp;&ensp;&ensp;[最小栈](src/main/java/com/kandy/algorithm/week01/LeetCode155.java) 
-&ensp;&ensp;&ensp;&ensp;[逆波兰表达式求值](src/main/java/com/kandy/algorithm/week01/LeetCode150.java) 
-&ensp;&ensp;&ensp;&ensp;[基本计算器II](src/main/java/com/kandy/algorithm/week01/LeetCode227.java) 
-&ensp;&ensp;&ensp;&ensp;[基本计算器](src/main/java/com/kandy/algorithm/week01/LeetCode224.java) 
-&ensp;&ensp;&ensp;&ensp;[柱状图中最大的矩形](src/main/java/com/kandy/algorithm/week01/LeetCode084.java) 
-&ensp;&ensp;&ensp;&ensp;[接雨水](src/main/java/com/kandy/algorithm/week01/LeetCode042.java) 
+&ensp;&ensp;&ensp;&ensp;[有效的括号字符串](src/main/java/com/kandy/algorithm/week01/LC678有效的括号字符串.java) 
+&ensp;&ensp;&ensp;&ensp;[最小栈](src/main/java/com/kandy/algorithm/week01/LC155最小栈.java) 
+&ensp;&ensp;&ensp;&ensp;[逆波兰表达式求值](src/main/java/com/kandy/algorithm/week01/LC150逆波兰表达式求值.java) 
+&ensp;&ensp;&ensp;&ensp;[基本计算器II](src/main/java/com/kandy/algorithm/week01/LC227基本计算器II.java) 
+&ensp;&ensp;&ensp;&ensp;[基本计算器](src/main/java/com/kandy/algorithm/week01/LC224基本计算器.java) 
+&ensp;&ensp;&ensp;&ensp;[柱状图中最大的矩形](src/main/java/com/kandy/algorithm/week01/LC84柱状图中最大矩形.java) 
+&ensp;&ensp;&ensp;&ensp;[接雨水](src/main/java/com/kandy/algorithm/week01/LC42接雨水.java) 
 
 
 ##### 队列
@@ -44,7 +42,7 @@
 * 用链表实现一个链式队列
 * 实现一个循环队列
 
-&ensp;&ensp;&ensp;&ensp;[滑动窗口最大值](src/main/java/com/kandy/algorithm/week01/LeetCode239.java) 
+&ensp;&ensp;&ensp;&ensp;[滑动窗口最大值](src/main/java/com/kandy/algorithm/week01/LC239滑动窗口最大值.java) 
 
 
 
