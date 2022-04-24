@@ -9,6 +9,7 @@ public class LC11盛最多水的容器 {
         int left = 0, right = height.length - 1;
         int ans = 0;
         while (left < right) {
+            //两个指针指向的数字中较小值*指针之间的距离
             int area = Math.min(height[left], height[right]) * (right - left);
             ans = Math.max(ans, area);
             //移动较短边的指针
@@ -31,5 +32,4 @@ public class LC11盛最多水的容器 {
         }
         return maxarea;
     }
-
 }

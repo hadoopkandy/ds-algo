@@ -23,35 +23,6 @@ public class LC1两数之和 {
         return new int[0];
     }
 
-    /**
-     * 题目并没有假定数组是有序的，所以以下双指针的写法也是不对的，不能对数组排序
-     * @param nums
-     * @param target
-     * @return
-     */
-    public int[] twoSum2(int[] nums, int target) {
-        Arrays.sort(nums);
-        int i = 0;
-        int j = nums.length - 1;
-        boolean found = false;
-        while (i < j) {
-            if (nums[i] + nums[j] == target) {
-                found = true;
-                break;
-            } else if (nums[i] + nums[j] > target) {
-                j--;
-            } else {
-                i++;
-            }
-        }
-        if (found) {
-            return new int[]{i, j};
-        } else {
-            return new int[0];
-        }
-    }
-
-
     public static void main(String[] args) {
 
         LC1两数之和 sol = new LC1两数之和();

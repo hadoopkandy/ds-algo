@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /**
  * 146. LRU 缓存
- * 无序哈希表 + 双链表
+ * 无序哈希表 + 双链表 LinkedHashMap
  */
 public class LC146LRU缓存 {
     class LRUCache {

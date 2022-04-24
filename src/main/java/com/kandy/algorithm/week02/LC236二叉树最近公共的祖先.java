@@ -26,7 +26,7 @@ public class LC236二叉树最近公共的祖先 {
         boolean lson = dfs(root.left, p, q);
         //右孩子
         boolean rson = dfs(root.right, p, q);
-        //左子树和右子树都包含p q 或者当前节点已经p q 那么只要求左子树或者右子树包含另一个节点
+        //左子树、右子树分别包含p q 或者当前节点已经p q 那么只要求左子树或者右子树包含另一个节点
         if ((lson && rson) || ((root.val == p.val || root.val == q.val) && (lson || rson))) {
             ans = root;
         }
@@ -55,6 +55,8 @@ public class LC236二叉树最近公共的祖先 {
 
     //通过dfs 维护 每个节点的父节点信息，存到哈希表
     public void dfs(TreeNode root) {
+        //递归终止条件
+        if (root == null) return;
         if (root.left != null) {
             parent.put(root.left.val, root);
             dfs(root.left);

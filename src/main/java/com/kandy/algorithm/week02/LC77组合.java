@@ -9,8 +9,8 @@ import java.util.List;
  */
 public class LC77组合 {
     public List<List<Integer>> combine(int n, int k) {
-        ans = new ArrayList<List<Integer>>();
-        chosen = new ArrayList<Integer>();
+        ans = new ArrayList<>();
+        chosen = new ArrayList<>();
         this.n = n;
         this.k = k;
         // 1..n 个数，从1开始遍历，到n+1终止

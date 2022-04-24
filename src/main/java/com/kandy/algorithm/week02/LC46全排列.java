@@ -25,6 +25,8 @@ public class LC46全排列 {
             ans.add(new ArrayList<>(per));
             return;
         }
+        //依次考虑0,1,...,n-1位置放哪个数
+        //“从还没用过的”数中选一个放在当前位置
         for (int i = 0; i < n; i++) {
             if(!used[i]){
                 //没选过

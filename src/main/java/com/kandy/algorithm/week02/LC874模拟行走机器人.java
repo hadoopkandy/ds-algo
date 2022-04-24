@@ -23,6 +23,7 @@ public class LC874模拟行走机器人 {
             if (command == -1) {
                 dir = (dir + 1) % 4; //右转
             } else if (command == -2) {
+                //dir = (dir -1 + 4)%4
                 dir = (dir + 3) % 4; //左转
             } else {
                 for (int i = 0; i < command; i++) {
