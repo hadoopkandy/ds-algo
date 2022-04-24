@@ -14,15 +14,15 @@ public class LC46全排列 {
         num = new int[n];
         for (int i = 0; i < n; i++) num[i] = nums[i];
         used = new boolean[n];
-        per = new ArrayList<Integer>();
-        ans = new ArrayList<List<Integer>>();
+        per = new ArrayList<>();
+        ans = new ArrayList<>();
         recur(0);
         return ans;
     }
 
     private void recur(int depth) {
         if (depth == n) {
-            ans.add(new ArrayList<Integer>(per));
+            ans.add(new ArrayList<>(per));
             return;
         }
         for (int i = 0; i < n; i++) {
