@@ -75,6 +75,7 @@ public class LC355设计推特 {
             PriorityQueue<ListNode> queue = new PriorityQueue<>((o1, o2) -> Integer.compare(o2.id, o1.id));
             for (ListNode node : lists) {
                 if (node != null) {
+                    //跳过保护节点head
                     queue.add(node.next);
                 }
             }
