@@ -12,7 +12,7 @@ import java.util.Queue;
 /**
  * 429.N叉树的层序遍历
  */
-public class lc429N叉树的层序遍历 {
+public class LC429N叉树的层序遍历 {
 
     public List<List<Integer>> levelOrder(Node root) {
         //<节点，深度从0开始>
