@@ -8,9 +8,10 @@ import java.util.*;
 public class LC355设计推特 {
     public static class Twitter {
         int n;
-        private List<Set<Integer>> to;// 出边数组,用户A关注用户B，则存 A->B的有向边，用Set主要是为了去重
+        private List<List<Integer>> to;// 出边数组,用户A关注用户B，则存 A->B的有向边
         Map<Integer, ListNode> userTweets;
         int id; //自增id，用于ListNode排序
+
         class ListNode {
             public int id;
             public int val;
@@ -22,7 +23,8 @@ public class LC355设计推特 {
             public ListNode(int val) {
                 this.val = val;
             }
-            public ListNode(int val,int id) {
+
+            public ListNode(int val, int id) {
                 this.val = val;
                 this.id = id;
             }
@@ -33,7 +35,7 @@ public class LC355设计推特 {
             to = new ArrayList<>(n + 1); //浪费0
             //1 <= userId, followerId, followeeId <= 500,浪费一个0
             for (int i = 0; i <= n; i++) {
-                this.to.add(new HashSet<>());
+                this.to.add(new ArrayList<>());
             }
             userTweets = new HashMap<>();
         }
@@ -42,31 +44,33 @@ public class LC355设计推特 {
             ListNode head = userTweets.get(userId);
             if (head == null) {
                 head = new ListNode(-1);
-                head.next = new ListNode(tweetId,id++);
+                head.next = new ListNode(tweetId, id++);
                 userTweets.put(userId, head);
                 return;
             }
             //单链表头部插入节点
-            ListNode newNode = new ListNode(tweetId,id++);
+            ListNode newNode = new ListNode(tweetId, id++);
             ListNode next = head.next;
             head.next = newNode;
             newNode.next = next;
         }
 
         public List<Integer> getNewsFeed(int userId) {
-            Set<Integer> followList = to.get(userId);
+            List<Integer> followList = new ArrayList<>(to.get(userId));
+            //把自己也加到关注列表里
             followList.add(userId);
             int n = followList.size();
             ListNode[] listNodes = new ListNode[n];
-            int i =0;
-            for(Integer follow : followList){
+            int i = 0;
+            for (Integer follow : followList) {
                 listNodes[i++] = userTweets.get(follow);
             }
             return mergeKLists(listNodes);
         }
 
         public List<Integer> mergeKLists(ListNode[] lists) {
-            List<Integer> ans = new ArrayList<>(10);
+            int k = 10;
+            List<Integer> ans = new ArrayList<>(k);
             //大根堆
             PriorityQueue<ListNode> queue = new PriorityQueue<>((o1, o2) -> Integer.compare(o2.id, o1.id));
             for (ListNode node : lists) {
@@ -77,7 +81,7 @@ public class LC355设计推特 {
             while (!queue.isEmpty()) {
                 final ListNode curr = queue.poll();
                 ans.add(curr.val);
-                if (ans.size() >= 10) {
+                if (ans.size() >= k) {
                     return ans;
                 }
                 if (curr.next != null) {
@@ -88,31 +92,33 @@ public class LC355设计推特 {
         }
 
         public void follow(int followerId, int followeeId) {
-            to.get(followerId).add(followeeId);
+            List<Integer> followList = to.get(followerId);
+            //判断重复
+            if (followList.contains(Integer.valueOf(followeeId))) {
+                return;
+            }
+            followList.add(followeeId);
         }
 
         public void unfollow(int followerId, int followeeId) {
+            List<Integer> followList = to.get(followerId);
+            //判断不存在
+            if (!followList.contains(Integer.valueOf(followeeId))) {
+                return;
+            }
             //注意remove方法要变成对象，否则就变成index
-            to.get(followerId).remove(Integer.valueOf(followeeId));
+            followList.remove(Integer.valueOf(followeeId));
         }
     }
 
     public static void main(String[] args) {
         Twitter twitter = new Twitter();
-        twitter.postTweet(2,5);
-        twitter.postTweet(1,3);
-        twitter.postTweet(1,101);
-        twitter.postTweet(2,13);
-        twitter.postTweet(2,10);
-        twitter.postTweet(1,2);
-        twitter.postTweet(2,94);
-        twitter.postTweet(2,505);
-        twitter.postTweet(1,333);
-        twitter.postTweet(1,22);
-        System.out.println(twitter.getNewsFeed(2));
-        twitter.follow(2,1);
-        System.out.println(twitter.getNewsFeed(2));
-        twitter.unfollow(2,1);
-        System.out.println(twitter.getNewsFeed(2));
+        twitter.postTweet(1, 5);
+        System.out.println(twitter.getNewsFeed(1));
+        twitter.follow(1, 2);
+        twitter.postTweet(2, 6);
+        System.out.println(twitter.getNewsFeed(1));
+        twitter.postTweet(1, 2);
+        System.out.println(twitter.getNewsFeed(1));
     }
 }
