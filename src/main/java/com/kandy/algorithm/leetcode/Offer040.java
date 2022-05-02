@@ -14,7 +14,8 @@ public class Offer040 {
         if (k == 0) { // 排除 0 的情况
             return vec;
         }
-        //Java堆结构PriorityQueue完全解析 https://blog.csdn.net/u013309870/article/details/71189189
+
+        //Java堆结构PriorityQueue完全解析 https://blog.csdn.net/u013309870/article/details/71189189 默认小根堆 以下实现变成大根堆
         PriorityQueue<Integer> queue = new PriorityQueue<>((o1, o2) -> Integer.compare(o2,o1));
         for (int i = 0; i < k; ++i) {
             queue.offer(arr[i]);

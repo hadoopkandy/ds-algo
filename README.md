@@ -65,20 +65,33 @@
 * 实现一个基于链表法解决冲突问题的散列表
 * 实现一个 LRU 缓存淘汰算法
 
+&ensp;&ensp;&ensp;&ensp;[LRU缓存](src/main/java/com/kandy/algorithm/week02/LC146LRU缓存.java) 
+
 ##### 字符串
 * 实现一个字符集，只包含 a～z 这 26 个英文字母的 Trie 树
 * 实现朴素的字符串匹配算法
 
 #### 关于二叉树和堆的 7 个必知必会的代码实现
 ##### 二叉树
-* 实现一个二叉查找树，并且支持插入、删除、查找操作
-* 实现查找二叉查找树中某个节点的后继、前驱节点
 * 实现二叉树前、中、后序以及按层遍历
+* 实现一个二叉搜索树，并且支持插入、删除、查找操作
+* 实现查找二叉搜索树中某个节点的后继、前驱节点
 
-&ensp;&ensp;&ensp;&ensp;[二叉树前序遍历](src/main/java/com/kandy/algorithm/leetcode/Solution144.java) 
-&ensp;&ensp;&ensp;&ensp;[二叉树中序遍历](src/main/java/com/kandy/algorithm/leetcode/Solution094.java)
-&ensp;&ensp;&ensp;&ensp;[二叉树后序遍历](src/main/java/com/kandy/algorithm/leetcode/Solution145.java) 
-&ensp;&ensp;&ensp;&ensp;[二叉树层序遍历](src/main/java/com/kandy/algorithm/leetcode/Solution102.java) 
+&ensp;&ensp;&ensp;&ensp;[二叉树的前序遍历](src/main/java/com/kandy/algorithm/week03/LC144二叉树的前序遍历.java)
+&ensp;&ensp;&ensp;&ensp;[二叉树的中序遍历](src/main/java/com/kandy/algorithm/week03/LC94二叉树的中序遍历.java)
+&ensp;&ensp;&ensp;&ensp;[二叉树的后序遍历](src/main/java/com/kandy/algorithm/week03/LC145二叉树的后序遍历.java)
+&ensp;&ensp;&ensp;&ensp;[二叉树的层序遍历](src/main/java/com/kandy/algorithm/week03/LC102二叉树的层序遍历.java)
+&ensp;&ensp;&ensp;&ensp;[前序与中序遍历序列构造二叉树](src/main/java/com/kandy/algorithm/week03/LC105从前序与中序遍历序列构造二叉树.java)
+&ensp;&ensp;&ensp;&ensp;[二叉树的序列化与反序列化](src/main/java/com/kandy/algorithm/week03/LC297二叉树的序列化与反序列化.java)
+&ensp;&ensp;&ensp;&ensp;[二叉树最近公共的祖先](src/main/java/com/kandy/algorithm/week03/LC236二叉树最近公共的祖先LCA.java)
+
+&ensp;&ensp;&ensp;&ensp;[二叉搜索树的验证](src/main/java/com/kandy/algorithm/week02/LC98验证二叉搜索树.java)
+&ensp;&ensp;&ensp;&ensp;[二叉搜索树的查找](src/main/java/com/kandy/algorithm/week03/二叉搜索的查找模板LC700.java)
+&ensp;&ensp;&ensp;&ensp;[二叉搜索树的插入](src/main/java/com/kandy/algorithm/week03/二叉搜索的插入模板LC701.java)
+&ensp;&ensp;&ensp;&ensp;[二叉搜索树的后继](src/main/java/com/kandy/algorithm/week03/二叉搜索树后继模板面试题0406.java)
+&ensp;&ensp;&ensp;&ensp;[二叉搜索树的删除](src/main/java/com/kandy/algorithm/week03/二叉搜索树删除模板LC450.java)
+
+
 
 ##### 堆
 * 实现一个小顶堆、大顶堆、优先级队列
@@ -86,12 +99,19 @@
 * 利用优先级队列合并 K 个有序数组
 * 求一组动态数据集合的最大 Top K
 
+&ensp;&ensp;&ensp;&ensp;[合并K个升序链表](src/main/java/com/kandy/algorithm/week03/LC23合并K个升序链表.java)
+
 #### 关于图的几个必知必会的代码实现
 ##### 图
 * 实现有向图、无向图、有权图、无权图的邻接矩阵和邻接表表示方法
 * 实现图的深度优先搜索、广度优先搜索
 * 实现 Dijkstra 算法、A* 算法
 * 实现拓扑排序的 Kahn 算法、DFS 算法
+
+&ensp;&ensp;&ensp;&ensp;[出边数组方式存储图](src/main/java/com/kandy/algorithm/week03/LC1245树的直径.java)
+&ensp;&ensp;&ensp;&ensp;[深度优先遍历-找环](src/main/java/com/kandy/algorithm/week03/LC684冗余连接DFS找环法.java)
+&ensp;&ensp;&ensp;&ensp;[广度优先遍历-拓扑排序](src/main/java/com/kandy/algorithm/week03/LC210课程表II.java)
+
 
 #### 贪心、分治、回溯和动态规划等几种算法思想必知必会的代码实现
 ##### 回溯

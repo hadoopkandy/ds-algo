@@ -13,31 +13,35 @@ public class RotateKNodesRight {
     public static class Node {
         int value;
         Node next;
-        Node(int x) {value = x;}
-        public void setNext(Node next)
-        {
-            this.next=next;
+
+        Node(int x) {
+            value = x;
+        }
+
+        public void setNext(Node next) {
+            this.next = next;
         }
     }
 
     public static void main(String args[]) {
-        Node  n1 = new Node(1);
-        Node  n2 = new Node(2);
-        Node  n3 = new Node(3);
-        Node  n4 = new Node(4);
-        Node  n5 = new Node(5);
+        Node n1 = new Node(1);
+        Node n2 = new Node(2);
+        Node n3 = new Node(3);
+        Node n4 = new Node(4);
+        Node n5 = new Node(5);
         n1.setNext(n2);
         n2.setNext(n3);
         n3.setNext(n4);
         n4.setNext(n5);
         System.out.println(toString(n1));
-        System.out.println(lastK(n1,2).value);
+        System.out.println(lastK(n1, 2).value);
     }
-    public static String toString(Node head){
-        if (head ==null){
+
+    public static String toString(Node head) {
+        if (head == null) {
             return "NULL";
         }
-        return head.value +"->"+toString(head.next);
+        return head.value + "->" + toString(head.next);
     }
 
     /**
@@ -46,11 +50,10 @@ public class RotateKNodesRight {
      * 从第k步开始，第二个指针也开始遍历，两个指针差距k-1个距离，
      * 当第一个指针走到了尾巴节点，第二个指针正好在倒数第k个节点；
      */
-    public static Node lastK(Node head,int k)
-    {
+    public static Node lastK(Node head, int k) {
 
-        Node p=head;
-        Node q=head;
+        Node p = head;
+        Node q = head;
 
         if (k <= 0)
             return null;

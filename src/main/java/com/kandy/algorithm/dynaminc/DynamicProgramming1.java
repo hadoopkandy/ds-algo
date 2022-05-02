@@ -11,9 +11,9 @@ public class DynamicProgramming1 {
     private int[] weight = {2, 2, 4, 6, 3};//物品重量
     private int n = 5;//物品数量
     private int w = 9; //背包可承载的最大重量
+
     /**
-     *
-     * @param i 将决策第几个物品是否装入背包，cw表示当前背包中物品的总重量
+     * @param i  将决策第几个物品是否装入背包，cw表示当前背包中物品的总重量
      * @param cw
      */
     public void f(int i, int cw) { // 调用f(0, 0)
@@ -31,6 +31,7 @@ public class DynamicProgramming1 {
      * 回溯算法的"备忘录"优化版本
      */
     private boolean[][] mem = new boolean[5][10]; // 备忘录，默认值false
+
     public void f2(int i, int cw) { // 调用f(0, 0)
         if (cw == w || i == n) { // cw==w表示装满了，i==n表示物品都考察完了
             if (cw > maxW) maxW = cw;
@@ -47,7 +48,7 @@ public class DynamicProgramming1 {
     public static void main(String[] args) {
         final DynamicProgramming1 dp = new DynamicProgramming1();
 //        dp.f(0, 0);
-        dp.f2(0,0);
+        dp.f2(0, 0);
         System.out.println(dp.maxW);
     }
 }

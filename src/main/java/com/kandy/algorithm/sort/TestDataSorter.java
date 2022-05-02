@@ -3,25 +3,26 @@ package com.kandy.algorithm.sort;
 import org.junit.Test;
 
 /**
- *  排序测试类
+ * 排序测试类
  */
 public class TestDataSorter {
     int a[] = {49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 5, 4, 62, 99, 98, 54, 56, 17, 18, 23, 34, 15, 35, 25, 53, 51};
     DataSorter s = new DataSorter();
 
     @Test
-    public void insertSort(){
-        doTest(s.new InsertSort(),a);
+    public void insertSort() {
+        doTest(s.new InsertSort(), a);
     }
-   @Test
-   public void shellSort() {
-       a=new int[]{1, 54, 6, 3, 78, 34, 12, 45, 56, 100};
-       doTest(s.new ShellSort(), a);
-   }
 
     @Test
-    public void selectSort(){
-        a =new int[]{1, 54, 6, 3, 78, 34, 12, 45};
+    public void shellSort() {
+        a = new int[]{1, 54, 6, 3, 78, 34, 12, 45, 56, 100};
+        doTest(s.new ShellSort(), a);
+    }
+
+    @Test
+    public void selectSort() {
+        a = new int[]{1, 54, 6, 3, 78, 34, 12, 45};
         doTest(s.new SelectSort(), a);
     }
 
@@ -51,13 +52,12 @@ public class TestDataSorter {
         doTest(s.new RadixSort(), a);
     }
 
-       private void doTest(Sortable sorter,int a[]){
-           if(sorter instanceof AbstractSort)
-           {
-               AbstractSort sort=(AbstractSort) sorter;
-               sort.printArray(a);
-               return;
-           }
-           sorter.sort(a);
+    private void doTest(Sortable sorter, int a[]) {
+        if (sorter instanceof AbstractSort) {
+            AbstractSort sort = (AbstractSort) sorter;
+            sort.printArray(a);
+            return;
+        }
+        sorter.sort(a);
     }
 }

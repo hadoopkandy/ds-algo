@@ -13,6 +13,6 @@ package com.kandy.algorithm.sort;
  * 平均速度最快：快速排序
  * 不稳定：简单选择排序、快速排序，希尔排序，堆排序。
  */
-public interface Sortable{
-     public abstract void sort(int a[]);
+public interface Sortable {
+    public abstract void sort(int a[]);
 }

@@ -13,9 +13,9 @@ public class DataSorter {
      * 基本思想：在要排序的一组数中，假设前面(n-1)[n>=2] 个数已经是排好顺序的，现在要把第n个数插到前面的有序数中，
      * 使得这n个数也是排好顺序的。如此反复循环，直到全部排好顺序。
      */
-    public  class InsertSort extends AbstractSort {
+    public class InsertSort extends AbstractSort {
         @Override
-        public  void sort(int[] a) {
+        public void sort(int[] a) {
             for (int i = 1; i < a.length; i++) {
                 int j = i - 1;
                 int temp = a[i];
@@ -36,10 +36,10 @@ public class DataSorter {
      */
     public class ShellSort extends AbstractSort {
         @Override
-        public  void sort(int[] a) {
+        public void sort(int[] a) {
             int d = a.length;
             while (true) {
-               d=d/2;
+                d = d / 2;
                 for (int x = 0; x < d; x++) {
 
                     for (int i = x + d; i < a.length; i += d) {
@@ -67,13 +67,13 @@ public class DataSorter {
     public class SelectSort extends AbstractSort {
         @Override
         public void sort(int[] a) {
-            int  min, len = a.length;
+            int min, len = a.length;
             for (int i = 0; i < len - 1; i++) {  //i循环到倒数第二个
                 min = i;
                 for (int j = i + 1; j < len; j++) //j循环到最后一个
                     if (a[min] > a[j])
                         min = j; //获取最小数的下标
-                swap(a,min,i);
+                swap(a, min, i);
             }
         }
     }
@@ -84,7 +84,7 @@ public class DataSorter {
      */
     public class HeapSort extends AbstractSort {
         @Override
-        public  void sort(int[] a) {
+        public void sort(int[] a) {
             System.out.println("堆排序开始");
             int arrayLength = a.length;
             //循环建堆
@@ -142,12 +142,12 @@ public class DataSorter {
      */
     public class BubbleSort extends AbstractSort {
         @Override
-        public  void sort(int[] a) {
+        public void sort(int[] a) {
             int temp = 0;
             for (int i = 0; i < a.length - 1; i++) {
                 for (int j = 0; j < a.length - 1 - i; j++) {
                     if (a[j] > a[j + 1]) { //把大的值交换到后面
-                       swap(a,j,j+1);
+                        swap(a, j, j + 1);
                     }
                 }
             }
@@ -160,7 +160,7 @@ public class DataSorter {
      */
     public class QuickSort extends AbstractSort {
         @Override
-        public  void sort(int[] a) {
+        public void sort(int[] a) {
             if (a.length > 0) {    //查看数组是否为空
                 _quickSort(a, 0, a.length - 1);
             }
@@ -259,7 +259,7 @@ public class DataSorter {
      */
     public class RadixSort extends AbstractSort {
         @Override
-        public  void sort(int[] a) {
+        public void sort(int[] a) {
             //首先确定排序的趟数;
             int max = a[0];
             for (int i = 1; i < a.length; i++) {

@@ -9,6 +9,29 @@ import java.util.List;
  * 22.括号生成
  */
 public class LC22括号生成 {
+    public List<String> generateParenthesis2(int n) {
+        List<String> ans = new ArrayList<String>();
+        backtrack(ans, new StringBuilder(), 0, 0, n);
+        return ans;
+    }
+    public void backtrack(List<String> ans, StringBuilder cur, int left, int right, int n) {
+        if (cur.length() == n * 2) {
+            ans.add(cur.toString());
+            return;
+        }
+        //如果左括号数量不大于 n，我们可以放一个左括号
+        if (left < n) {
+            cur.append('(');
+            backtrack(ans, cur, left + 1, right, n);
+            cur.deleteCharAt(cur.length() - 1);
+        }
+        //如果右括号数量小于左括号的数量,我们可以放一个右括号
+        if (right < left) {
+            cur.append(')');
+            backtrack(ans, cur, left, right + 1, n);
+            cur.deleteCharAt(cur.length() - 1);
+        }
+    }
     // 分治解法
     public List<String> generateParenthesis(int n) {
         if (store == null) store = new HashMap<>();

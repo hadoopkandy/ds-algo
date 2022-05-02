@@ -10,6 +10,7 @@ public class DepthAndWidthOfBinaryTree {
     /**
      * 获取最大深度
      * 使用递归，分别求出左子树的深度、右子树的深度，两个深度的较大值+1即可
+     *
      * @param root
      * @return
      */
@@ -26,6 +27,7 @@ public class DepthAndWidthOfBinaryTree {
     /**
      * 获取最大宽度
      * 　使用队列，层次遍历二叉树。在上一层遍历完成后，下一层的所有节点已经放到队列中，此时队列中的元素个数就是下一层的宽度。以此类推，依次遍历下一层即可求出二叉树的最大宽度。
+     *
      * @param root
      * @return
      */

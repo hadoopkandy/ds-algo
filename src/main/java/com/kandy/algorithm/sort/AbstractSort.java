@@ -3,14 +3,15 @@ package com.kandy.algorithm.sort;
 import java.util.Arrays;
 
 
-public abstract class AbstractSort implements Sortable{
+public abstract class AbstractSort implements Sortable {
 
-    public void printArray(int a[]){
-         System.out.println(Arrays.toString(a));
+    public void printArray(int a[]) {
+        System.out.println(Arrays.toString(a));
     }
 
     /**
      * 三段式的数据交换
+     *
      * @param data
      * @param i
      * @param j

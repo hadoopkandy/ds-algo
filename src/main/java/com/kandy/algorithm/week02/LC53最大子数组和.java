@@ -36,20 +36,29 @@ public class LC53最大子数组和 {
     }
 
     public Status getInfo(int[] a, int l, int r) {
+        //求解
         if (l == r) {
             return new Status(a[l], a[l], a[l], a[l]);
         }
+        //划分
         int m = (l + r) >> 1;
         Status lSub = getInfo(a, l, m);
         Status rSub = getInfo(a, m + 1, r);
-        return pushUp(lSub, rSub);
+        //合并
+        return merge(lSub, rSub);
     }
 
-    public Status pushUp(Status l, Status r) {
+    //以 l=-2 r=1 举例 合并后iSum =-2 +1 =-1  lSum= max(-2,-2+1)=-1 rSum=max(1,1+(-2))=1  mSum=max(max(-2,1),-2+1)=1
+    public Status merge(Status l, Status r) {
         int iSum = l.iSum + r.iSum; //左子区间的iSum + 右子区间的iSum
         int lSum = Math.max(l.lSum, l.iSum + r.lSum); //要么等于左子区间的lSum 要么等于左子区间的iSum + 右子区间的lSum,两者取最大
         int rSum = Math.max(r.rSum, r.iSum + l.rSum); //要么等于右子区间的rSum，要么等于右子区间的Sum + 左子区间的rSum,两者取最大
         int mSum = Math.max(Math.max(l.mSum, r.mSum), l.rSum + r.lSum);
         return new Status(lSum, rSum, mSum, iSum);
+    }
+
+    public static void main(String[] args) {
+        LC53最大子数组和 code = new LC53最大子数组和();
+        System.out.println(code.maxSubArray2(new int[]{-2,1,-3,4,-1,2,1,-5,4}));
     }
 }
