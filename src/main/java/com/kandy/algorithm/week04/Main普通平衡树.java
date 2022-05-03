@@ -3,7 +3,7 @@ package com.kandy.algorithm.week04;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
+public class Main普通平衡树 {
     public static final int RANGE = 10000010;
 
     public static int rand() {
