@@ -13,6 +13,7 @@ import java.util.Arrays;
  * 1.写出二分的条件 （一般是一个不等式）例如：upper_bound >val里最小的
  * 2.把条件放到if(...)里，并确定满足条件时要小的(right=mid) 还是要大的(left=mid)
  * 3.另一半放到else里，(left = mid+1或right=mid-1) ，如果是后者求mid时补+1
+ * 如果题目有无解的情况，上界增加1，下界减小1，用于标识无解
  */
 public class LC34在排序数组中查找元素的第一个和最后一个位置 {
     public int[] searchRange(int[] nums, int target) {

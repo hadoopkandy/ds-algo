@@ -1,5 +1,8 @@
 package com.kandy.algorithm.week04;
 
+/**
+ * 满足nums[i] <= nums[n-1] 条件时较小的index 后继型
+ */
 public class LC153寻找旋转排序数组中的最小值 {
     public int findMin(int[] nums) {
         int left = 0, right = nums.length - 1;

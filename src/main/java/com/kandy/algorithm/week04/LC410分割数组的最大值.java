@@ -1,5 +1,8 @@
 package com.kandy.algorithm.week04;
 
+/**
+ * 后继型
+ */
 public class LC410分割数组的最大值 {
     public int splitArray(int[] nums, int m) {
         int left = 0; // 下界：最大的一个nums[i]

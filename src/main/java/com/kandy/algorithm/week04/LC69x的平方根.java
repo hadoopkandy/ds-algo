@@ -1,5 +1,8 @@
 package com.kandy.algorithm.week04;
 
+/**
+ * 满足ans*ans<=x 条件时，最大的ans 前驱型
+ */
 public class LC69x的平方根 {
     //整数二分
     public int mySqrt(int x) {
