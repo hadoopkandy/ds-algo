@@ -19,5 +19,20 @@ public class LC704二分查找 {
             }
         }
         return -1;
+        // return bsearchInternally(nums, 0, nums.length - 1, target);
+    }
+
+    // 二分查找的递归实现
+    private int bsearchInternally(int[] a, int low, int high, int value) {
+        if (low > high) return -1;
+
+        int mid = low + ((high - low) >> 1);
+        if (a[mid] == value) {
+            return mid;
+        } else if (a[mid] < value) {
+            return bsearchInternally(a, mid + 1, high, value);
+        } else {
+            return bsearchInternally(a, low, mid - 1, value);
+        }
     }
 }

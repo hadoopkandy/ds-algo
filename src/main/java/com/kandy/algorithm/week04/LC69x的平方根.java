@@ -1,11 +1,14 @@
 package com.kandy.algorithm.week04;
 
 public class LC69x的平方根 {
+    //整数二分
     public int mySqrt(int x) {
-        // 找最大的ans，满足ans^2<=x
+        // 找最大的ans，满足ans*ans<=x
+        // 例如x=8    1 1 0 0 (1*1满足 2*2 满足  3*3 不满足 4*4 不满足) 条件单调
         int left = 0, right = x;
         while (left < right) {
             int mid = (left + right + 1) / 2;
+            //mid * mid <= x 可能int越界
             if (mid <= x / mid) {
                 left = mid;
             } else {

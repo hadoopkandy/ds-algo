@@ -2,12 +2,13 @@ package com.kandy.algorithm.week04;
 
 public class LC410分割数组的最大值 {
     public int splitArray(int[] nums, int m) {
-        int left = 0; // 下界：每个分一组
-        int right = 0; // 上界：全部放一起
+        int left = 0; // 下界：最大的一个nums[i]
+        int right = 0; // 上界：所有元素和
         for (int i = 0; i < nums.length; i++) {
             left = Math.max(left, nums[i]);
             right += nums[i];
         }
+        //示例数据nums={7,2,5,10,8} left = 10 right =32
         while (left < right) {
             int mid = (left + right) / 2;
             // 第一个使得判定问题isValid得到true的位置
@@ -17,7 +18,7 @@ public class LC410分割数组的最大值 {
         return right;
     }
 
-    // 判定 把nums分成<=m组，每组的和<=T
+    // 判定 把nums分成<=m组 连续子数组，每组的和<=T
     private boolean isValid(int[] nums, int m, int T) {
         int box = 0;
         int count = 1;
@@ -26,10 +27,17 @@ public class LC410分割数组的最大值 {
                 box += nums[i]; // 放进当前组，不超
             } else {
                 count++; // 超了，新开一组
+                if (nums[i] > T) return false; //一个盒子放这个元素都放不下，直接无解
                 box = nums[i];
             }
         }
         return count <= m;
+    }
+
+    public static void main(String[] args) {
+        LC410分割数组的最大值 lc = new LC410分割数组的最大值();
+        int[] nums = new int[]{7, 2, 5, 10, 8};
+        System.out.println(lc.splitArray(nums, 2));
     }
 }
 /*
