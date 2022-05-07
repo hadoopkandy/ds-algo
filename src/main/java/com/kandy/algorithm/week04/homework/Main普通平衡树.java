@@ -1,4 +1,4 @@
-package com.kandy.algorithm.week04;
+package com.kandy.algorithm.week04.homework;
 
 import java.util.Random;
 import java.util.Scanner;

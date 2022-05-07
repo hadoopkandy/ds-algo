@@ -5,8 +5,13 @@ import java.util.Scanner;
 
 /**
  * acwing136 邻值查找
+ *
+ * 关键点：
+ * "索引"的灵活性 按照下标Node数组、按值链表
+ * 不同"索引"的数据结构之间建立"映射"关系
+ * 倒序考虑问题
  */
-public class Main {
+public class Main邻值查找 {
     public static class Node {
         long val;
         int idx;
@@ -15,10 +20,10 @@ public class Main {
     };
 
     static int SIZE = 100005;
-    static int[] a = new int[SIZE];
-    static int[] ans = new int[SIZE];
-    static Integer[] rk = new Integer[SIZE];
-    static Node[] pos = new Node[SIZE];
+    static int[] a = new int[SIZE]; //原始数据
+    static int[] ans = new int[SIZE]; //答案数组
+    static Integer[] rk = new Integer[SIZE]; //rk[i]表示排第i名的是谁（是哪个下标）
+    static Node[] pos = new Node[SIZE]; //指针数据指向链表
     static int n;
 
     // 双链表插入模板，在node后面插入新结点
@@ -31,7 +36,7 @@ public class Main {
         return newNode;
     }
 
-    // 双链表删除模板
+    // 双链表删除模板  被删除的点 前驱后继互相指
     static void DeleteNode(Node node) {
         node.pre.next = node.next;
         node.next.pre = node.pre;
@@ -71,8 +76,10 @@ public class Main {
             // 数值：a[rk[i]]，下标：rk[i]
             pos[rk[i]] = AddNode(tail.pre, rk[i]);
         }
+        //倒序考虑 第一个不用考虑
         for (int i = n; i > 1; i--) {
             Node curr = pos[i];
+            //与前驱的差值，与后继的差值比较
             if (a[i] - curr.pre.val <= curr.next.val - a[i]) {
                 ans[i] = curr.pre.idx;
             } else {

@@ -1,4 +1,4 @@
-package com.kandy.algorithm.week01;
+package com.kandy.algorithm.week04.homework;
 
 /**
  * 1206.设计跳表
