@@ -13,8 +13,8 @@ public class Main普通平衡树 {
     public static class Node {
         Node left; //左孩子
         Node right; //右孩子
-        int key, val;//节点关键码（原始数据）、随机权值
-        int cnt, size; //副本数、子树大小
+        int key, val;//节点关键码（原始数据）满足BST性质、随机权值 满足堆性质
+        int cnt, size; //副本数、子树大小 排名
 
         Node(int data) {
             key = data;
@@ -127,7 +127,7 @@ public class Main普通平衡树 {
                 p.cnt++;
             } else if (data < p.key) {
                 p.left = Insert(p.left, data);
-                //不满足堆性质，左孩子绕p右旋,左孩子代替p成为新的根
+                //不满足堆性质，p的左孩子大，左孩子绕p右旋,左孩子代替p成为新的根
                 if (p.val < p.left.val) p = zig(p);
             } else {
                 p.right = Insert(p.right, data);
@@ -143,11 +143,13 @@ public class Main普通平衡树 {
         private Node Remove(Node p, int data) {
             if (p == null) return null;
             if (data == p.key) {
-                if (p.cnt > 1) p.cnt--;
+                if (p.cnt > 1) p.cnt--; //如果有副本，副本数减1
                 else {
+                    //如果是叶子
                     if (p.left == null && p.right == null) {
-                        return null;
+                        return null; //递归的返回 传给p.left = Remove(p.left, data) 或 p.right = Remove(p.right, data);
                     }
+                    //右孩子是空，或者左右孩子都不为空，左比右大
                     if (p.right == null || (p.left != null && p.left.val > p.right.val)) {
                         p = zig(p);
                         p.right = Remove(p.right, data);
@@ -165,7 +167,7 @@ public class Main普通平衡树 {
             return p;
         }
 
-        //p的左孩子绕p向右旋转
+        //p的左孩子绕p向右旋转 参考PPT里 0绕2右旋
         private Node zig(Node p) {
             Node q = p.left; //找到p的左孩子q
             p.left = q.right; //p的左孩子变成q的右孩子
@@ -173,10 +175,10 @@ public class Main普通平衡树 {
             //结点上若有附加信息，一并更新
             update(p);
             update(q);
-            return q;
+            return q; //q变成看新的根
         }
 
-        //p的右孩子绕p向左旋转
+        //p的右孩子绕p向左旋转  参考PPT里 2绕0左旋
         private Node zag(Node p) {
             Node q = p.right;
             p.right = q.left;
