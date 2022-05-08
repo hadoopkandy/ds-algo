@@ -144,6 +144,68 @@ public class LC685冗余连接II {
         //此时[3,1]产生冲突，[4,2]产生环，要保留冲突边[3,1]，通过找到1的父节点，从而获得环之中的冲突边：[2,1]
         int[][] edges = {{2, 1}, {3, 1}, {1, 4}, {4, 2}};
         int[] edge = lc.findRedundantDirectedConnection(edges);
+
+//        int[][] edges = {{4, 2}, {1, 5}, {5, 2}, {5, 3},{2,4}};
+//        int[] edge = lc.findRedundantDirectedConnection2(edges);
         System.out.println(Arrays.toString(edge));
+    }
+
+    public int[] findRedundantDirectedConnection2(int[][] edges) {
+        // 开一个变量，统计图里面一共有几组边
+        int n = edges.length;
+
+        int[] ins = new int[n + 1];
+        int[] outs = new int[n + 1];
+        boolean[][] adj = new boolean[n + 1][n + 1];
+
+        // 答案数组
+        int[] res = null;
+
+        // 记录入度为2的点
+        int inIsTwo = -1;
+
+        // 遍历所有的边，初始化邻接表
+        for (int[] e : edges) {
+            // 获取from结点
+            int from = e[0];
+            // 获取to结点
+            int to = e[1];
+            // 将to结点的入度+1
+            ins[to]++;
+            // 将from结点的出度+1
+            outs[from]++;
+            // 将邻接表的相关位置变成true
+            adj[from][to] = true;
+
+            // 先看下入度为2的点
+            // 仅仅入度为2，是不够的，有可能产生游离点，需要继续判断
+            if (ins[to] == 2) {
+                inIsTwo = to;
+            }
+
+            // 在没有入度为2的点的情况下
+            // 任意点， 只要入度和出度同时不为0，必有环，记录最后一个
+            if (ins[to] == 1 && outs[to] > 0) {
+                res = e;
+            }
+        }
+
+        if (inIsTwo != -1) {
+            // 有入度为 2 的点
+            res = null;
+            // 找指向 inIsTwo 的边
+            // 这条边的from，如果既有出度，又有入度，说明有环
+            for (int i = n - 1; i >= 0; i--) {
+                int from = edges[i][0];
+                int to = edges[i][1];
+                if (to == inIsTwo && outs[from] + ins[from] > 1) {
+                    if (res == null) res = edges[i];
+
+                    // 相互指向的场景
+                    if (adj[to][from]) return edges[i];
+                }
+            }
+        }
+        return res;
     }
 }

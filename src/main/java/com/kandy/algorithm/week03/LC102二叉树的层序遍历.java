@@ -45,6 +45,7 @@ public class LC102二叉树的层序遍历 {
                 TreeNode tmpNode = que.poll();
                 itemList.add(tmpNode.val);
 
+                //把该节点的孩子节点入队
                 if (tmpNode.left != null) que.offer(tmpNode.left);
                 if (tmpNode.right != null) que.offer(tmpNode.right);
                 len--;
