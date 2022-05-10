@@ -26,10 +26,11 @@ public class Main邻值查找 {
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Node node = (Node) o;
-            return val == node.val &&
-                    idx == node.idx;
+            if (!(o instanceof Node)) {
+                return false;
+            }
+            Node that = (Node) o;
+            return Objects.equals(val, that.val) && Objects.equals(idx, that.idx);
         }
 
         @Override

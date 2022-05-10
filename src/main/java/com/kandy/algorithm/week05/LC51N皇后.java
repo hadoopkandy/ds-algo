@@ -1,4 +1,4 @@
-package com.kandy.algorithm.week02;
+package com.kandy.algorithm.week05;
 
 import java.util.ArrayList;
 import java.util.Arrays;

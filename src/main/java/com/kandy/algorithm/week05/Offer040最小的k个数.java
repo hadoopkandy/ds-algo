@@ -1,4 +1,4 @@
-package com.kandy.algorithm.leetcode;
+package com.kandy.algorithm.week05;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;
@@ -8,7 +8,7 @@ import java.util.PriorityQueue;
  *
  * 输入整数数组 arr ，找出其中最小的 k 个数。例如，输入4、5、1、6、2、7、3、8这8个数字，则最小的4个数字是1、2、3、4。
  */
-public class Offer040 {
+public class Offer040最小的k个数 {
     public int[] getLeastNumbers(int[] arr, int k) {
         int[] vec = new int[k];
         if (k == 0) { // 排除 0 的情况
@@ -34,7 +34,7 @@ public class Offer040 {
     }
 
     public static void main(String[] args) {
-        Offer040 offer = new Offer040();
+        Offer040最小的k个数 offer = new Offer040最小的k个数();
         System.out.println(Arrays.toString(offer.getLeastNumbers(new int[]{9,8,7,6,5,4,3,2,1},4)));
         System.out.println(Arrays.toString(offer.getLeastNumbers(new int[]{0,1,2,1},1)));
     }
