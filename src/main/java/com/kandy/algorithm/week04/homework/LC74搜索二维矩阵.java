@@ -46,4 +46,22 @@ public class LC74搜索二维矩阵 {
         return -1;
     }
 
+    //解法2：将二维数组映射成一维数组进行标准二分查找
+    public boolean searchMatrix2(int[][] matrix, int target) {
+        int m = matrix.length, n = matrix[0].length;
+        int left = 0, right = m * n - 1;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            // 3*4的二维数组，下标为6的元素，对应二维数组matrix[1][2]的元素
+            int midValue = matrix[mid / n][mid % n];
+            if (midValue == target) return true;
+            if (midValue < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return false;
+    }
+
 }
