@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * 78. 子集 （选或不选，任意个）
  * 给你一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）
+ * 状态：index  + subset
  */
 public class LC78子集 {
     public List<List<Integer>> subsets(int[] nums) {
