@@ -80,6 +80,7 @@ public class LC23合并K个升序链表 {
             return ans;
         }
 
+        //自下而上堆化
         void heapifyUp(int p) {
             while (p > 0) {
                 int fa = (p - 1) / 2;
@@ -91,6 +92,7 @@ public class LC23合并K个升序链表 {
             }
         }
 
+        //自上而下堆化
         void heapifyDown(int p) {
             int child = p * 2 + 1;//要换的那个孩子
             while (child < heap.size()) {  // child未出界，说明p有合法的child，还不是叶子

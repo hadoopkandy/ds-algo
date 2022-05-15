@@ -33,38 +33,66 @@ public class LC912排序数组 {
         }
     }
 
-    //堆排序 是对选择排序的优化，利用二叉堆高效地选出最小值
+    //堆排序 是对选择排序的优化，利用二叉堆高效地选出最大值
     public static void heapSort(int[] nums) {
         if (nums.length == 0) return;
 
         int length = nums.length;
+        //通过堆化以后，数组的左半部分是较大的节点，左半部分满足大根堆性质，根节点最大
         for (int i = length / 2 - 1; i >= 0; i--) {
-            heapify(nums, length, i);
+            heapifyDown(nums, length, i);
         }
 
+        //从后往前与堆顶交换
         for (int i = length - 1; i >= 0; i--) {
             int temp = nums[0];
             nums[0] = nums[i];
             nums[i] = temp;
-            heapify(nums, i, 0);
+            heapifyDown(nums, i, 0);
         }
     }
 
+    //自顶向下堆化 非递归实现
+    public static void heapifyDown(int[] nums, int length, int i) {
+        int child = i * 2 + 1;//要换的那个孩子
+        while (child < length) {  // child未出界，说明i有合法的child，还不是叶子
+            int otherChild = i * 2 + 2;//另一个孩子
+            // 先比较两个孩子，谁大就继续跟i比较
+            // child存较大的孩子
+            if (otherChild < length && nums[otherChild] > nums[child])
+                child = otherChild;
+            // 让child跟i比较
+            if (nums[child] > nums[i]) { // 大根堆
+                int temp = nums[i];
+                nums[i] = nums[child];
+                nums[child] = temp;
+
+                i = child;
+                child = i * 2 + 1;
+            } else break;
+        }
+    }
+
+    //自顶向下堆化 递归实现
     public static void heapify(int[] nums, int length, int i) {
-        int left = 2 * i + 1, right = 2 * i + 2;
+        int left = 2 * i + 1, right = 2 * i + 2; //左右孩子
         int largest = i;
 
+        //存在左孩子且左孩子比当前largest节点大
         if (left < length && nums[left] > nums[largest]) {
             largest = left;
         }
+        //存在右孩子，且右孩子比当前largest节点大
         if (right < length && nums[right] > nums[largest]) {
             largest = right;
         }
 
+        //当前节点和左右孩子相比不是较大的，就进行交换
         if (largest != i) {
             int temp = nums[i];
             nums[i] = nums[largest];
             nums[largest] = temp;
+            //继续往下堆化
             heapify(nums, length, largest);
         }
     }
