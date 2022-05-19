@@ -7,6 +7,7 @@ import java.util.Map;
 
 /**
  * 1. 两数之和
+ * 454. 四数相加 II 和此题解法类似 分组 + 哈希表
  */
 public class LC1两数之和 {
     public int[] twoSum(int[] nums, int target) {
