@@ -10,26 +10,26 @@ public class LC215数组中的第K个最大元素 {
 
     // 求排序以后下标在index这里的数是多少
     //时间复杂度 n + n/2 + n/4 + n/8 + ... +1 < 2n
-    public int quickSort(int[] arr, int l, int r, int index) {
-        if (l >= r) return arr[l];
-        int pivot = partition(arr, l, r);
+    public int quickSort(int[] nums, int l, int r, int index) {
+        if (l >= r) return nums[l];
+        int pivot = partition(nums, l, r);
         //左边够去左边找
-        if (index <= pivot) return quickSort(arr, l, pivot, index);
-        else return quickSort(arr, pivot + 1, r, index); //否则去右边找
+        if (index <= pivot) return quickSort(nums, l, pivot, index);
+        else return quickSort(nums, pivot + 1, r, index); //否则去右边找
     }
 
-    int partition(int[] a, int l, int r) {
+    int partition(int[] nums, int l, int r) {
         int pivot = l + (int) (Math.random() * (r - l + 1));
-        int pivotVal = a[pivot];
+        int pivotVal = nums[pivot];
 
         while (l <= r) {
-            while (a[l] < pivotVal) l++;
-            while (a[r] > pivotVal) r--;
+            while (nums[l] < pivotVal) l++;
+            while (nums[r] > pivotVal) r--;
             if (l == r) break;
             if (l < r) {
-                int temp = a[l];
-                a[l] = a[r];
-                a[r] = temp;
+                int temp = nums[l];
+                nums[l] = nums[r];
+                nums[r] = temp;
                 l++;
                 r--;
             }
