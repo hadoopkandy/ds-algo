@@ -4,18 +4,6 @@ package com.kandy.algorithm.week02;
  * 53.最大子数组和
  */
 public class LC53最大子数组和 {
-    public int maxSubArray(int[] nums) {
-        //定义之前和、最大和
-        int pre = 0, maxAns = nums[0];
-        for (int x : nums) {
-            //当前和=之前和+当前值，比较当前和当前值最大值，更新答案
-            pre = Math.max(pre + x, x);
-            //更新最大和
-            maxAns = Math.max(maxAns, pre);
-        }
-        return maxAns;
-    }
-
     public class Status {
         //lSum 表示 [l,r][l,r] 内以 l 为左端点的最大子段和
         //rSum 表示 [l,r][l,r] 内以 r 为右端点的最大子段和
