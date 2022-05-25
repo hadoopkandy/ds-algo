@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 /**
  * 贪心-决策包容性
+ * 一块饼干，发给满足里面最大的孩子
+ * 一个孩子，吃满足里面最小的饼干
  */
 public class LC455分发饼干 {
     public int findContentChildren(int[] g, int[] s) {
