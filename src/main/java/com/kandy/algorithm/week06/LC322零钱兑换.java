@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 动态规划(DP)：是一种对问题的状态空间，进行分阶段、有顺序、不重复、决策性遍历的算法
- * 分阶段（例如：小的amout的先算，算好之后就是记下下来）
+ * 分阶段（例如：小的amout的先算，算好之后就是记下来就是最优解）
  * 有顺序（例如i [1,amout]）
  * 不重复：记忆化只算一次
  * 决策性：三者取min
@@ -24,6 +24,10 @@ import java.util.Arrays;
  *
  * 本题的状态：剩余金额 已用硬币枚数
  * 贪心：每次都选尽量大的面值  coins=[10,9,1] amount=18 贪心解：10 1 (8个1) 正解：9 9 面值成倍数时，贪心算法成立
+ *
+ * 状态转移方程：
+ * opt[i]表示凑成金额i所需的最少硬币数
+ * opt[i] = Math.min(opt[i], opt[i - coins[j]] + 1)
  */
 public class LC322零钱兑换 {
     //递推实现
@@ -42,7 +46,7 @@ public class LC322零钱兑换 {
         return opt[amount];
     }
 
-    //记忆化搜索 递归实现
+    //记忆化搜索(递归实现)
     public int coinChang2(int[] coins, int amount) {
         this.coins = coins;
         this.opt = new int[amount + 1];
@@ -60,7 +64,7 @@ public class LC322零钱兑换 {
             return (int) 1e9;
         }
         if (opt[amount] != -1) {
-            return opt[amount];
+            return opt[amount]; //算过了，直接返回
         }
         opt[amount] = (int) 1e9;
         for (int coin : coins) {

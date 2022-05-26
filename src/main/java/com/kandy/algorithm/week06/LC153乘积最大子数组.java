@@ -1,5 +1,11 @@
 package com.kandy.algorithm.week06;
 
+/**
+ * fmax[i] fmin[i]表示以i结尾的乘积最大、最小子数组
+ * fmax[i] = max(fmax[i - 1] * nums[i], fmin[i - 1] * nums[i], nums[i])
+ * fmin[i] = min(fmax[i - 1] * nums[i], fmin[i - 1] * nums[i], nums[i])
+ * fmin[i - 1] 越小 *  nums[i] 可能成为最大乘积
+ */
 public class LC153乘积最大子数组 {
     public int maxProduct(int[] nums) {
         int n = nums.length;

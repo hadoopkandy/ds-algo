@@ -3,8 +3,15 @@ package com.kandy.algorithm.week06;
 /**
  * 状态：取字符串的边界
  * 最优子结构：最长长度
+ * f(i,j) 表示text1的前i个字符和text2的前j个字符能组成的LCS长度
+ * 如果text1[i] = text2[j]   f(i,j) = f(i-1,j-1)+1
+ * 如果text1[i] != text2[j]  f(i,j) = max(f(i-1,j),f(i,j-1))
+ *
+ * 动归题目的边界处理技巧：
+ * 方法一：f[0,0]=0,然后递推时用if语句判断，目标f[m-1,n-1]
+ * 方法二：认为字符串下标从1开始，f[i,0]=0与f[0,j]均作为边界，目标f[m,n]
  */
-public class LC1143最长公共子序列 {
+public class LC1143最长公共子序列LCS {
     //动归边界处理技巧1: 认为字符串下标从1开始，f[i,0]=0与f[0,j]均作为边界，目标f[m,n]
     public int longestCommonSubsequence(String text1, String text2) {
         int m = text1.length();
