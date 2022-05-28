@@ -50,4 +50,37 @@ public class LC18四数之和 {
         }
         return result;
     }
+
+    //递归解法 n数之和
+    public List<List<Integer>> fourSum2(int[] nums, int target) {
+        Arrays.sort(nums);
+        return nSum(nums, 0, 4, target);
+    }
+
+    public List<List<Integer>> nSum(int[] nums, int start, int n, int target) {
+        List<List<Integer>> ans = new ArrayList<>();
+        int j = nums.length - 1;
+        for (int i = start; i < nums.length; i++) {
+            if (i > start && nums[i] == nums[i - 1]) continue;
+            if (n == 2) {
+                while (i < j && nums[i] + nums[j] > target) j--;
+                if (i < j && nums[i] + nums[j] == target) {
+                    ans.add(Arrays.asList(new Integer[]{nums[i], nums[j]}));
+                }
+            } else {
+                List<List<Integer>> others = nSum(nums, i + 1, n - 1, target - nums[i]);
+                for (List<Integer> other : others) {
+                    Integer[] temp = new Integer[n];
+                    temp[0] = nums[i];
+                    for (int k = 0; k < n - 1; k++) {
+                        temp[k + 1] = other.get(k);
+                    }
+                    ans.add(Arrays.asList(temp));
+                }
+            }
+        }
+        return ans;
+    }
+
+
 }

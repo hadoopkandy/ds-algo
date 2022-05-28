@@ -75,6 +75,31 @@ public class LC15三数之和 {
         return ans;
     }
 
+    public List<List<Integer>> threeSum2(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> ans = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
+            List<List<Integer>> jks = twoSum(nums, i + 1, -nums[i]);
+            for (List<Integer> jk : jks) {
+                ans.add(Arrays.asList(new Integer[]{nums[i], jk.get(0), jk.get(1)}));
+            }
+        }
+        return ans;
+    }
+
+    public List<List<Integer>> twoSum(int[] nums, int start, int target) {
+        List<List<Integer>> ans = new ArrayList<>();
+        int j = nums.length - 1;
+        for (int i = start; i < nums.length; i++) {
+            if (i > start && nums[i] == nums[i - 1]) continue; //去重
+            while (i < j && nums[i] + nums[j] > target) j--;
+            if (i < j && nums[i] + nums[j] == target) {
+                ans.add(Arrays.asList(new Integer[]{nums[i], nums[j]}));
+            }
+        }
+        return ans;
+    }
     public static void main(String[] args) {
         int[] nums = new int[]{-1, 0, 1, 2, -1, -4};
         System.out.println(threeSum(nums));
