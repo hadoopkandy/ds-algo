@@ -10,7 +10,7 @@ public class LC153乘积最大子数组 {
     public int maxProduct(int[] nums) {
         int n = nums.length;
         //max 和min一起作为代表，才能满足最优子结构
-        //以i 结尾的成绩最大、最小子数组
+        //以i 结尾的乘积最大、最小子数组
         int fmax[] = new int[n];
         int fmin[] = new int[n];
         fmax[0] = nums[0];
