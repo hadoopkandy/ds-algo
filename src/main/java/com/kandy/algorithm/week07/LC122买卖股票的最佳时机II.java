@@ -1,15 +1,16 @@
 package com.kandy.algorithm.week07;
 
 /**
- * DP需要维护的状态：
- * i:天数 j:持仓（0或1）有没有股票  k:交易次数 l:是否在冷冻期（0或1）
- * 交易次数无限制 k = +infinity
+ * DP需要维护的状态：i:天数 j:持仓（0或1）有没有股票  k:交易次数 l:是否在冷冻期（0或1）
  *
  * f(i,j) 表示第i天结束时，持有j股股票(0或1)的最大收益
+ * 决策：买、卖、啥也不干
  * f[i][1] = Math.max(f[i][1], f[i - 1][0] - prices[i]) 买 i-1天没股票，交出prices[i]的现金买股票，获得1的仓位
  * f[i][0] = Math.max(f[i][0], f[i - 1][1] + prices[i]) 卖 i-1天有股票，兑现获得prices[i]的现金，仓位变成0
  * f[i][j] = Math.max(f[i][j], f[i - 1][j])  啥也不干，只有时间推移
- * <p>
+ *
+ *
+ * 本题：交易次数无限制 k = +infinity
  * f[i][0]的来源：1.f[i - 1][1] + prices[i] 大约是 f[i - 1][0] - prices[i-1] + prices[i]  2.f[i - 1][0]
  */
 public class LC122买卖股票的最佳时机II {

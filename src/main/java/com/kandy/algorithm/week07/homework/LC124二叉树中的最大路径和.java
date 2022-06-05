@@ -3,6 +3,7 @@ package com.kandy.algorithm.week07.homework;
 import com.kandy.algorithm.leetcode.TreeNode;
 
 public class LC124二叉树中的最大路径和 {
+    //本地节点val的取值范围[-1000,1000]，所以max时可初始化成-1001
     private int MAX = -1001;
 
     public int maxPathSum(TreeNode root) {

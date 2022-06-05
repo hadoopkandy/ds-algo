@@ -3,6 +3,7 @@ package com.kandy.algorithm.week07.homework;
 import java.util.Arrays;
 
 /**
+ * 完全背包问题
  * 物品：完全平方数 体积：n 价值：1
  */
 public class LC279完全平方数 {

@@ -8,7 +8,8 @@ public class LC55跳跃游戏 {
         boolean[] f = new boolean[n];//默认false
         f[0] = true;//第一个位置能到达
         for (int i = 1; i < nums.length; i++) {
-            for (int j = 0; j < i; j++) {
+            //注意j倒序循环 比正序循环要快一些
+            for (int j = i-1; j >=0; j--) {
                 //当前位置j能达到，并且当前位置j加上能跳跃的长度超过i，则i这个位置可以到达
                 f[i] = f[j] && nums[j] + j >= i;
                 if (f[i]) break; //i这个位置可以到达，则可以退出本层循环
