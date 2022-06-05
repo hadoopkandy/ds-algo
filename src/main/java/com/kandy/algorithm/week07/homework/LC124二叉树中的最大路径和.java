@@ -16,7 +16,9 @@ public class LC124二叉树中的最大路径和 {
         }
         int l = dfs(root.left);
         int r = dfs(root.right);
+        //比较路径：左中、右中、当前节点
         int max = Math.max(Math.max(l + root.val, r + root.val), root.val);
+        //比较路径：左中右
         MAX = Math.max(MAX, Math.max(l + root.val + r, max));
         return max;
     }
