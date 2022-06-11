@@ -1,7 +1,9 @@
 package com.kandy.algorithm.week08.homework;
 
 
-
+/**
+ * 并查集实现
+ */
 public class LC200岛屿数量 {
     public int numIslands(char[][] grid) {
         m = grid.length;
