@@ -48,7 +48,7 @@ public class LC200岛屿数量 {
         return fa[x] = find(fa[x]);
     }
 
-    //并查集 把元素x和元素y所在的集合合并，把x的fa 改成y
+    //并查集 把元素x和元素y所在的集合合并，集合代表不一样时,把x的fa 改成y
     void unionSet(int x, int y) {
         x = find(x);
         y = find(y);

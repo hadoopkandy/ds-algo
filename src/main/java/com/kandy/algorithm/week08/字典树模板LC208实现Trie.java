@@ -97,6 +97,7 @@ public class 字典树模板LC208实现Trie {
         private boolean solve(String word, boolean isInsert, boolean isPrefix) {
             Node curr = root;
             for (char ch : word.toCharArray()) {
+                //当前字符不存在
                 if (!curr.child.containsKey(ch)) {
                     if (isInsert) {
                         //不存在就插入

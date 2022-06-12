@@ -1,4 +1,4 @@
-package com.kandy.algorithm.week02;
+package com.kandy.algorithm.week09;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -88,11 +88,11 @@ public class LC15三数之和 {
         return ans;
     }
 
-    public List<List<Integer>> twoSum(int[] nums, int start, int target) {
+    List<List<Integer>> twoSum(int[] nums, int start, int target) {
         List<List<Integer>> ans = new ArrayList<>();
         int j = nums.length - 1;
         for (int i = start; i < nums.length; i++) {
-            if (i > start && nums[i] == nums[i - 1]) continue; //去重
+            if (i > start && nums[i] == nums[i - 1]) continue;//去重
             while (i < j && nums[i] + nums[j] > target) j--;
             if (i < j && nums[i] + nums[j] == target) {
                 ans.add(Arrays.asList(new Integer[]{nums[i], nums[j]}));
@@ -100,6 +100,7 @@ public class LC15三数之和 {
         }
         return ans;
     }
+
     public static void main(String[] args) {
         int[] nums = new int[]{-1, 0, 1, 2, -1, -4};
         System.out.println(threeSum(nums));
