@@ -1,4 +1,4 @@
-package com.kandy.algorithm.week02;
+package com.kandy.algorithm.week09.homework;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,6 +17,7 @@ public class LC49字母异位词分组 {
     "abt": ["bat"]
 }
 */
+        //将字符串排序之后分组
         HashMap<String, List<String>> groups = new HashMap<>();
         for (String s : strs) {
             //转成char数组，排序分组
