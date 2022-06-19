@@ -44,7 +44,7 @@ public class LC438找到字符串中所有字母异位词 {
         if (Arrays.equals(sCnt, pCnt)) {
             ans.add(0);
         }
-        //i从m开始遍历，到n-1结束[m,n)
+        //i从m开始遍历字符串s，到n-1结束[m,n)
         for (int i = m; i < n; i++) {
             //去掉一个旧字母
             sCnt[s.charAt(i - m) - 'a']--;

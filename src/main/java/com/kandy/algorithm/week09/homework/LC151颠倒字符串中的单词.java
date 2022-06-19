@@ -6,6 +6,7 @@ import java.util.*;
  * 151. 颠倒字符串中的单词
  */
 public class LC151颠倒字符串中的单词 {
+    //方法一：java api
     public String reverseWords(String s) {
         // 除去开头和末尾的空白字符
         s = s.trim();
@@ -15,6 +16,7 @@ public class LC151颠倒字符串中的单词 {
         return String.join(" ", wordList);
     }
 
+    //方法二：自己实现String操作api
     public String reverseWords2(String s) {
         //字符串首尾trim、以及将字符串间多余的空白字符去除
         StringBuilder sb = trimSpaces(s);
