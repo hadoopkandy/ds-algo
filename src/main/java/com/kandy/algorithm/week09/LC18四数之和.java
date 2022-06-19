@@ -83,4 +83,43 @@ public class LC18四数之和 {
     }
 
 
+    public List<List<Integer>> fourSum3(int[] nums, int target) {
+        Arrays.sort(nums);
+        List<List<Integer>> ans = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
+            List<List<Integer>> jkls = threeSum(nums, i + 1, target - nums[i]);
+            for (List<Integer> jkl : jkls) {
+                ans.add(Arrays.asList(new Integer[]{nums[i], jkl.get(0), jkl.get(1), jkl.get(2)}));
+            }
+        }
+        return ans;
+    }
+
+    //枚举第一个数nums[i],在后面找两数之和=-nums[i]
+    public List<List<Integer>> threeSum(int[] nums, int start, int target) {
+        List<List<Integer>> ans = new ArrayList<>();
+        for (int i = start; i < nums.length; i++) {
+            if (i > start && nums[i] == nums[i - 1]) continue;
+            List<List<Integer>> jks = twoSum(nums, i + 1, target - nums[i]);
+            for (List<Integer> jk : jks) {
+                ans.add(Arrays.asList(new Integer[]{nums[i], jk.get(0), jk.get(1)}));
+            }
+        }
+        return ans;
+    }
+
+    List<List<Integer>> twoSum(int[] nums, int start, int target) {
+        //返回全部答案
+        List<List<Integer>> ans = new ArrayList<>();
+        int j = nums.length - 1;
+        for (int i = start; i < nums.length; i++) {
+            if (i > start && nums[i] == nums[i - 1]) continue;//去重
+            while (i < j && nums[i] + nums[j] > target) j--;
+            if (i < j && nums[i] + nums[j] == target) {
+                ans.add(Arrays.asList(new Integer[]{nums[i], nums[j]}));
+            }
+        }
+        return ans;
+    }
 }
