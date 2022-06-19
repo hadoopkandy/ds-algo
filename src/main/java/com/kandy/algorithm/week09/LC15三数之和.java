@@ -75,6 +75,7 @@ public class LC15三数之和 {
         return ans;
     }
 
+    //枚举第一个数nums[i],在后面找两数之和=-nums[i]
     public List<List<Integer>> threeSum2(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> ans = new ArrayList<>();
@@ -89,6 +90,7 @@ public class LC15三数之和 {
     }
 
     List<List<Integer>> twoSum(int[] nums, int start, int target) {
+        //返回全部答案
         List<List<Integer>> ans = new ArrayList<>();
         int j = nums.length - 1;
         for (int i = start; i < nums.length; i++) {
