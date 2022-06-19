@@ -1,6 +1,5 @@
 package com.kandy.algorithm.week09;
 
-import java.util.Arrays;
 
 /**
  * int x = 23124613 -> (x/100)%1000
