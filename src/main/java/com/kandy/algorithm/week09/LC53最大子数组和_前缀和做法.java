@@ -1,6 +1,9 @@
 package com.kandy.algorithm.week09;
 
 public class LC53最大子数组和_前缀和做法 {
+    //解法一：前缀和+前缀最小值
+    //求出前缀和数组s,枚举右端点i，需要找到一个i之前的一个j使得s[i]-s[j]最大
+    //也就是让s[j]最小，在维护一个s的前缀最小值即可
     public int maxSubArray(int[] nums) {
         int n = nums.length;
         int[] s = new int[n + 1];// 0-n
@@ -19,4 +22,8 @@ public class LC53最大子数组和_前缀和做法 {
         }
         return ans;
     }
+    //解法二：贪心
+    //只要"和"是正的，就不断向右扩展
+    //一旦发现"和"是负的，立即舍弃
+    //代码参照week06
 }

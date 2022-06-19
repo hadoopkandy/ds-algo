@@ -4,8 +4,8 @@ import java.util.HashMap;
 
 public class 前缀和_计数模板LC1248统计优美子数组 {
     //原问题：子段的奇数数量
-    //新问题:奇数看作1，偶数看作0,（每个数mod2），统计字段和是k的子段数量
-    //sum(l,r)==k  S[r]-S[l-1]==k (l<=r)  ->s[i]-s[j] ==k
+    //新问题:奇数看作1，偶数看作0,（每个数mod 2），统计字段和是k的子段数量
+    //sum(l,r)==k  S[r] - S[l-1]==k (l<=r)  -> s[i]-s[j] ==k "两数之差"问题
     //两数之差：一个是s[r] 一个是s[l-1]
     //需要用一个计数数组或hash map维护S中每个值的个数
     //枚举右端点i，看一下等于s[i]-k的值有几个就行了
@@ -36,19 +36,19 @@ public class 前缀和_计数模板LC1248统计优美子数组 {
         int n = nums.length;
         int[] s = new int[n + 1]; // s[0~n]前缀和数组
 
-        HashMap<Integer, Integer> mp = new HashMap<>();
-        mp.put(0, 1);
+        HashMap<Integer, Integer> countMap = new HashMap<>();
+        countMap.put(0, 1);
         for (int i = 1; i <= n; i++) {
             s[i] = s[i - 1] + nums[i - 1] % 2;
-            mp.put(s[i], mp.getOrDefault(s[i], 0) + 1);
+            countMap.put(s[i], countMap.getOrDefault(s[i], 0) + 1);
         }
 
         int ans = 0;
         for (int i = 1; i <= n; i++) {
             // s[i] - s[j] = k, 求j的数量
             // s[j] = s[i] - k
-            if (mp.containsKey(s[i] - k))
-                ans += mp.get(s[i] - k);
+            if (countMap.containsKey(s[i] - k))
+                ans += countMap.get(s[i] - k);
         }
         return ans;
     }
