@@ -8,6 +8,7 @@ import java.util.*;
  * 454. 四数相加 II 和此题解法类似 分组 + 哈希表
  */
 public class LC1两数之和 {
+    //方法一:HashMap
     public int[] twoSum(int[] nums, int target) {
         int len = nums.length;
         Map<Integer, Integer> hasMap = new HashMap<>(len - 1);
@@ -22,10 +23,12 @@ public class LC1两数之和 {
         return new int[0];
     }
 
+    //方法二:双指针
+    //排序后下标变了，把下标跟着一起排
     public int[] twoSum2(int[] nums, int target) {
         List<int[]> pairs = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
-            pairs.add(new int[]{nums[i], i});
+            pairs.add(new int[]{nums[i], i});//<值,原始下标>
         }
         pairs.sort((a, b) -> a[0] - b[0]);
 
