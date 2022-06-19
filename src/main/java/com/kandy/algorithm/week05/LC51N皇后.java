@@ -44,6 +44,7 @@ public class LC51N皇后 {
             ans.add(new ArrayList<>(p));
         }
         for (int col = 0; col < n; col++)
+            //剪枝
             if (!used[col] && !usedPlus.contains(row + col) && !usedMinus.contains(row - col)) {
                 p.add(col);
                 used[col] = true;
