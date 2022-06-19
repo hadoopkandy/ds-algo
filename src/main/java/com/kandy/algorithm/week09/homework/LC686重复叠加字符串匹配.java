@@ -13,7 +13,7 @@ public class LC686重复叠加字符串匹配 {
                 return -1;
             }
         }
-        //b中的字符在a中都出现过了
+        //至少将 a 复制长度大于等于 b 的长度才可能成为子串
         int ret = b.length() / a.length();
         StringBuilder sb = new StringBuilder(repeat(a, ret));
         for (int i = 0; i < 3; i++) {

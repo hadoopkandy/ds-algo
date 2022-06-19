@@ -64,22 +64,55 @@ public class RKHash模板_lc28实现strStr {
 
     //KMP O(n+m)
     //next[i]表示"t中以i结尾的非前缀子串"与"t的前缀"能够匹配的最长长度
-    //next告诉我们下一个应该比较什么
+    //next告诉我们下一个应该比较什么t
     public int strStr2(String haystack, String needle) {
-        if (needle.length() == 0) return 0;
-        int n = haystack.length();
-        int m = needle.length();
-        int[] next = new int[m];
-        Arrays.fill(next, -1);//下标从0开始，初始-1 下标从1开始，初始0
-        for (int i = 1, j = -1; i < m; i++) {
-            while (j >= 0 && needle.charAt(j + 1) != needle.charAt(i)) j = next[j];
-            if (needle.charAt(j + 1) == needle.charAt(i)) j++;
+        if (needle.isEmpty()) return 0;
+        //分别读取文本串和模式串的长度
+        int n = haystack.length(),m = needle.length();
+        // 文本串和模式串前面都加空格，使其下标从 1 开始
+        haystack = " " + haystack;
+        needle = " " + needle;
+
+        char[] s = haystack.toCharArray();
+        char[] t = needle.toCharArray();
+
+        // 构建 next 数组，数组长度为模式串的长度（next 数组是和模式串相关的）
+        int[] next = new int[m+1];
+        next[1] =0;
+        // 构造过程 i = 2，j = 0 开始，i 小于等于模式串长度 【构造 i 从 2 开始】
+        for (int i = 2, j = 0; i <= m; i++) {
+            // 匹配不成功的话，j = next(j)
+            while (j > 0 && t[i] != t[j + 1]) j = next[j];
+            // 匹配成功的话，先让 j++
+            if (t[i] == t[j + 1]) j++;
+            // 更新 next[i]，结束本次循环，i++
             next[i] = j;
         }
-        for (int i = 0, j = -1; i < n; i++) {
-            while (j >= 0 && haystack.charAt(i) != needle.charAt(j + 1)) j = next[j];
-            if (j + 1 < m && haystack.charAt(i) == needle.charAt(j + 1)) j++;
-            if (j + 1 == m) return i - m + 1;
+        // 匹配过程，i = 1，j = 0 开始，i 小于等于文本串长度 【匹配 i 从 1 开始】
+        for (int i = 1, j = 0; i <= n; i++) {
+            // 匹配不成功 j = next(j)
+            while (j > 0 && s[i] != t[j + 1]) j = next[j];
+            // 匹配成功的话，先让 j++，结束本次循环后 i++
+            if (s[i] == t[j + 1]) j++;
+            // 整一段匹配成功，直接返回下标
+            if (j == m) return i - m;
+        }
+        return -1;
+    }
+    //朴素解法
+    public int strStr3(String ss, String pp) {
+        int n = ss.length(), m = pp.length();
+        char[] s = ss.toCharArray(), p = pp.toCharArray();
+        // 枚举原串的「发起点」
+        for (int i = 0; i <= n - m; i++) {
+            // 从原串的「发起点」和匹配串的「首位」开始，尝试匹配
+            int a = i, b = 0;
+            while (b < m && s[a] == p[b]) {
+                a++;
+                b++;
+            }
+            // 如果能够完全匹配，返回原串的「发起点」下标
+            if (b == m) return i;
         }
         return -1;
     }
