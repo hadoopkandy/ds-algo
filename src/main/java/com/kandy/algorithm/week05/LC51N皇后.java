@@ -13,6 +13,8 @@ import java.util.List;
  *
  * 状态：行号row + 放的情况p
  * 每个i j i-j i+j 只能放一次
+ * 蛮力搜索：排列型，每行放的皇后的列号是一个排列，最后验证斜线
+ * 剪枝：维护两种斜线(行号+列号、行号-列号)的已用值集合，排序造成重复的分支
  */
 public class LC51N皇后 {
     public List<List<String>> solveNQueens(int n) {
