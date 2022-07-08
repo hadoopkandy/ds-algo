@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * 最小生成树(克鲁斯卡尔算法)
+ * Kruskal算法的时间复杂度瓶颈在于排序，其时间复杂度为O(nlogn)
  */
 public class Kruskal模板LC1584连接所有点的最小费用 {
     public int minCostConnectPoints(int[][] points) {

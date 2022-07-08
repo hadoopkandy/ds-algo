@@ -20,4 +20,16 @@ public class Offer33二叉搜索树的后续遍历 {
         //满足这个特性后，再递归判断左子树[i,m-1]和右子树[m,j-1]
         return p == j && recur(postorder, i, m - 1) && recur(postorder, m, j - 1);
     }
+
+    public static void main(String[] args) {
+        Offer33二叉搜索树的后续遍历 o = new Offer33二叉搜索树的后续遍历();
+        //true
+        System.out.println(o.verifyPostorder(new int[]{1, 2, 3, 4, 5}));
+        //true
+        System.out.println(o.verifyPostorder(new int[]{5, 4, 3, 2, 1}));
+        //true
+        System.out.println(o.verifyPostorder(new int[]{1, 3, 2, 4, 5}));
+        //false
+        System.out.println(o.verifyPostorder(new int[]{1, 2, 5, 3, 4}));
+    }
 }

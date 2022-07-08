@@ -1,5 +1,10 @@
 package com.kandy.algorithm.week08;
 
+/**
+ * 1.并查集初始状态下每个结点的父亲均为它自己
+ * 2.并查集执行N次合并操作的时间复杂度为O(n*α(n))，近似于线性
+ * 3.并查集使用了路径压缩的思想进行优化
+ */
 public class 并查集模板LC547省份数量 {
     public int findCircleNum(int[][] isConnected) {
         int n = isConnected.length;

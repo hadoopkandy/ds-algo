@@ -2,6 +2,7 @@ package com.kandy.algorithm.week07;
 
 /**
  * f(l,r,i) 表示把l-r合成i堆的最低成本
+ * 区间DP https://blog.csdn.net/qq_41661809/article/details/81487613
  */
 public class LC1000合并石头的最低成本 {
     public int mergeStones(int[] stones, int k) {
