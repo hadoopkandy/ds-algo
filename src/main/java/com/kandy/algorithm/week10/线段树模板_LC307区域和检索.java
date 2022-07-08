@@ -102,8 +102,6 @@ public class 线段树模板_LC307区域和检索 {
         Node[] a; // 长4N的数组，存线段树
     }
 
-    ;
-
     class NumArray {
 
         public NumArray(int[] nums) {
