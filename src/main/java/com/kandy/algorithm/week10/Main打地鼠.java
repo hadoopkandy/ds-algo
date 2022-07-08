@@ -42,10 +42,10 @@ public class Main打地鼠 {
         }
 
         //植物
-        int[][] plant = new int[m][2];
+        int[][] plants = new int[m][2];
         for (int i = 0; i < m; i++) {
-            plant[i][0] = scanner.nextInt();
-            plant[i][1] = scanner.nextInt();
+            plants[i][0] = scanner.nextInt();
+            plants[i][1] = scanner.nextInt();
         }
 
         //地鼠坐标计数
@@ -57,7 +57,7 @@ public class Main打地鼠 {
 
         Set<String> flowerSet = new HashSet<>();
         for (int i = 0; i < m; i++) {
-            String key = plant[i][0] + "_" + plant[i][1];
+            String key = plants[i][0] + "_" + plants[i][1];
             if (!flowerSet.contains(key)) {
                 flowerSet.add(key);
             }
