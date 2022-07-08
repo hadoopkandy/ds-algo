@@ -5,8 +5,12 @@ import javafx.util.Pair;
 import java.util.HashMap;
 import java.util.PriorityQueue;
 
+/**
+ * 估价函数：每个数字当前位置到目标位置的距离之和
+ */
 public class LC773滑动谜题_启发式搜索 {
     public int slidingPuzzle(int[][] board) {
+        //小根堆
         q = new PriorityQueue<>((x, y) -> Integer.compare(x.getKey(), y.getKey()));
         depth = new HashMap<>();
         String start = zip(board);
@@ -56,6 +60,7 @@ public class LC773滑动谜题_启发式搜索 {
         String ns = s.substring(0, pos) + s.charAt(other) + s.substring(pos + 1, other) + s.charAt(pos) + s.substring(other + 1);
         if (depth.containsKey(ns)) return;
         depth.put(ns, depth.get(s) + 1);
+        //<估价+当前步数,ns状态>
         q.add(new Pair<Integer, String>(depth.get(ns) + evaluate(ns), ns));
     }
 

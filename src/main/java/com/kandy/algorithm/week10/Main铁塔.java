@@ -1,14 +1,18 @@
 package com.kandy.algorithm.week10;
 
 import java.util.Scanner;
-//区间DP https://blog.csdn.net/qq_41661809/article/details/81487613
+
 //http://t.zoukankan.com/2020pengxiyue-p-9338643.html
 public class Main铁塔 {
-    static int SIZE = 5005;
-    static long[] f = new long[SIZE];
-    static long[] sum = new long[SIZE];
-    static long[] last = new long[SIZE];
+    static int SIZE = 5010;
     static long[] a = new long[SIZE];
+    //前缀和sum[i]表示前i 个铁塔的高度和
+    static long[] sum = new long[SIZE];
+    //f[i]表示前 i 个铁塔最多组成多少组
+    static long[] f = new long[SIZE];
+    //lastGroupSum[i]前 i 个铁塔的最优解下，最后一组铁塔的数量
+    static long[] lastGroupSum = new long[SIZE];
+
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -16,14 +20,14 @@ public class Main铁塔 {
 
         for (int i = 1; i <= n; ++i) {
             a[i] = sc.nextInt();
-            sum[i] = sum[i - 1] + a[i];
+            sum[i] = sum[i - 1] + a[i]; //前缀和
         }
         f[0] = 0;
         for (int i = 1; i <= n; ++i)
             for (int j = 0; j < i; ++j)
-                if (sum[i] - sum[j] >= last[j]) {
+                if (sum[i] - sum[j] >= lastGroupSum[j]) {
                     f[i] = f[j] + 1;
-                    last[i] = sum[i] - sum[j];
+                    lastGroupSum[i] = sum[i] - sum[j];
                 }
         System.out.println(n - f[n]);
     }
@@ -35,8 +39,8 @@ public class Main铁塔 {
 你需要把这些铁塔从左至右分成若干组，每组内铁塔编号必须是连续的，并且从左至右每一组铁塔的能提供的钢材总量单调不减。
 最后，你可以用每组铁塔所提供的钢材构成一层上面小下面大的城堡。
 
-负责处理钢材和建造城堡的公司对每一座铁塔收取1金币的费用，但会给每一层城堡（即每一组钢材）优惠1金币。这样一来，你要交的费用就是n
-组数金币。因此你需要把这些铁塔分成尽量多组。
+负责处理钢材和建造城堡的公司对每一座铁塔收取1金币的费用，但会给每一层城堡（即每一组钢材）优惠1金币。这样一来，你要交的费用就是
+n组数金币。因此你需要把这些铁塔分成尽量多组。
 例如有8座铁塔，高度分别为 1,9,9,4,1,2,2,9，你最多把他们分成5组连续的铁塔：
 1、9、9、4+1+2+2、9 每组提供的钢材总量为1、9、9、9、9 单调不减，费用为8-5=3枚金币。
 

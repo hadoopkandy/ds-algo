@@ -87,6 +87,15 @@ public class LC127单词接龙双向BFS {
     HashSet<String> wordSet;
     HashMap<String, Integer> depthBegin, depthEnd;
 
+/*
+最短转换序列:
+hbo -> hbw -> qbw -> qbx
+              hww    qbq
+       hco    hcd
+              hcj
+       abo    abq
+              ado
+ */
     public static void main(String[] args) {
         LC127单词接龙双向BFS lc = new LC127单词接龙双向BFS();
         System.out.println(lc.ladderLength2("hbo", "qbx", Arrays.asList(new String[]{"abo", "hco", "hbw", "ado", "abq", "hcd", "hcj", "hww", "qbq", "qby", "qbz", "qbx", "qbw"})));

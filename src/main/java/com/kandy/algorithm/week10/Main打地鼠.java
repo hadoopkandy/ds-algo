@@ -3,7 +3,7 @@ package com.kandy.algorithm.week10;
 import java.io.*;
 import java.util.*;
 
-public class Main地鼠与植物 {
+public class Main打地鼠 {
 
     static class Node implements Comparable<Node> {
         int x;
@@ -34,18 +34,21 @@ public class Main地鼠与植物 {
         int n = scanner.nextInt();
         int m = scanner.nextInt();
 
+        //地鼠
         int[][] mice = new int[n][2];
         for (int i = 0; i < n; i++) {
             mice[i][0] = scanner.nextInt();
             mice[i][1] = scanner.nextInt();
         }
 
-        int[][] flower = new int[m][2];
+        //植物
+        int[][] plant = new int[m][2];
         for (int i = 0; i < m; i++) {
-            flower[i][0] = scanner.nextInt();
-            flower[i][1] = scanner.nextInt();
+            plant[i][0] = scanner.nextInt();
+            plant[i][1] = scanner.nextInt();
         }
 
+        //地鼠坐标计数
         Map<String, Integer> miceCounter = new HashMap<>();
         for (int i = 0; i < n; i++) {
             String key = mice[i][0] + "_" + mice[i][1];
@@ -54,7 +57,7 @@ public class Main地鼠与植物 {
 
         Set<String> flowerSet = new HashSet<>();
         for (int i = 0; i < m; i++) {
-            String key = flower[i][0] + "_" + flower[i][1];
+            String key = plant[i][0] + "_" + plant[i][1];
             if (!flowerSet.contains(key)) {
                 flowerSet.add(key);
             }
@@ -115,7 +118,7 @@ https://blog.csdn.net/arxobject/article/details/119920726
 
 分析：
 1.用一个hash表来统计地鼠出现过的次数，key为坐标，value为次数。
-2.用一个hashset来记录植物的坐标，做为过滤用。
-3.创建一个Node节点，主要是用来排序，node的属性是x横坐标,y纵坐标,c次数。排序规则 (1) c的大小 (2)x+y的值 (3)x的值。
-4 . 排序可以用平衡树 TreeSet,或者大堆 PriorityQueue
+2.用一个hashset来记录植物的坐标，作为过滤用。
+3.创建一个Node节点，主要是用来排序，Node的属性是x横坐标,y纵坐标,c次数。排序规则 (1) c的大小 (2) x+y的值 (3) x的值
+4.排序可以用平衡树 TreeSet,或者大堆 PriorityQueue
  */
