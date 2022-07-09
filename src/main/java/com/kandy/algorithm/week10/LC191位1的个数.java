@@ -55,3 +55,11 @@ public class LC191位1的个数 {
         return cnt;
     }
 }
+/*
+393. UTF-8 编码验证
+https://leetcode.cn/problems/utf-8-validation/solution/utf-8-bian-ma-yan-zheng-by-leetcode-solu-vbbf/
+1310. 子数组异或查询
+https://leetcode.cn/problems/xor-queries-of-a-subarray/solution/gong-shui-san-xie-yi-ti-shuang-jie-shu-z-rcgu/
+1829. 每个查询的最大异或值
+https://leetcode.cn/problems/maximum-xor-for-each-query/solution/jian-dan-cao-zuo-qiu-k-by-ivon_shi-a-fen-80ta/
+ */

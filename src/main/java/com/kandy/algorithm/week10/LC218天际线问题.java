@@ -9,9 +9,9 @@ import java.util.PriorityQueue;
 
 public class LC218天际线问题 {
     public class Event {
-        int pos;
-        int height;
-        int type;
+        int pos;//位置
+        int height;//高度
+        int type;//产生1 消失-1
         int index;
 
         Event(int pos, int height, int type, int index) {
@@ -21,8 +21,6 @@ public class LC218天际线问题 {
             this.index = index;
         }
     }
-
-    ;
 
     public List<List<Integer>> getSkyline(int[][] buildings) {
         // <height, index> 大根堆
@@ -37,7 +35,9 @@ public class LC218天际线问题 {
             int left = buildings[i][0];
             int right = buildings[i][1];
             int height = buildings[i][2];
+            //产生事件
             events[i * 2] = new Event(left, height, 1, i);
+            //消失事件
             events[i * 2 + 1] = new Event(right, height, -1, i);
         }
         Arrays.sort(events, (x, y) -> x.pos - y.pos);

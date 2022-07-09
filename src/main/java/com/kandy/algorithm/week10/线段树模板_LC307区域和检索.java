@@ -119,3 +119,7 @@ public class 线段树模板_LC307区域和检索 {
         SegmentTree tree;
     }
 }
+/*
+699.掉落的方块
+https://leetcode.cn/problems/falling-squares/solution/by-ac_oier-zpf0/
+*/

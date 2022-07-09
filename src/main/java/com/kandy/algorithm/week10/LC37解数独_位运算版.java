@@ -10,8 +10,10 @@ public class LC37解数独_位运算版 {
         col = new int[9];
         box = new int[9];
         powers = new HashMap<>();
+        //次幂到指数的映射
         for (int i = 1; i <= 9; i++) powers.put(1 << i, i);
         for (int i = 0; i < 9; i++)
+            //初始化全1
             row[i] = col[i] = box[i] = ((1 << 9) - 1) << 1;
         // 1000000000
         //  111111111
@@ -20,6 +22,7 @@ public class LC37解数独_位运算版 {
             for (int j = 0; j < 9; j++) {
                 if (board[i][j] == '.') continue;
                 int digit = board[i][j] - '0';
+                //第digit是1，将其改成0
                 if ((row[i] >> digit & 1) == 1) row[i] = row[i] ^ (1 << digit);
                 if ((col[j] >> digit & 1) == 1) col[j] = col[j] ^ (1 << digit);
                 int k = boxIndex(i, j);
@@ -37,7 +40,7 @@ public class LC37解数独_位运算版 {
         List<Integer> availableDigits = getAvailableDigits(x, y);
         for (int digit : availableDigits) {
             board[x][y] = (char) ('0' + digit);
-            row[x] ^= (1 << digit);
+            row[x] ^= (1 << digit); //将1改成0
             col[y] ^= (1 << digit);
             box[boxIndex(x, y)] ^= (1 << digit);
             if (dfs(board)) return true;

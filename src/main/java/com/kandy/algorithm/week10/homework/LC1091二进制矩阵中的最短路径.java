@@ -3,6 +3,16 @@ package com.kandy.algorithm.week10.homework;
 import java.util.LinkedList;
 import java.util.Queue;
 
+
+/*
+高级搜索
+1091.二进制矩阵中的最短路径
+https://leetcode.cn/problems/shortest-path-in-binary-matrix/solution/bfsa-qi-fa-sou-suo-duo-chong-fang-fa-you-jrqp/
+752. 打开转盘锁
+https://leetcode.cn/problems/open-the-lock/solution/gong-shui-san-xie-yi-ti-shuang-jie-shuan-wyr9/
+847. 访问所有节点的最短路径
+https://leetcode.cn/problems/shortest-path-visiting-all-nodes/solution/gong-shui-san-xie-yi-ti-shuang-jie-bfs-z-6p2k/
+ */
 public class LC1091二进制矩阵中的最短路径 {
     public int shortestPathBinaryMatrix(int[][] grid) {
         int n = grid.length;

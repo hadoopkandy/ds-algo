@@ -17,8 +17,6 @@ public class LC1851包含每个查询的最小区间 {
         }
     }
 
-    ;
-
     public int[] minInterval(int[][] intervals, int[] queries) {
         // 事件：
         // 1 +4 在1这里发生事件：产生长度为4的区间
