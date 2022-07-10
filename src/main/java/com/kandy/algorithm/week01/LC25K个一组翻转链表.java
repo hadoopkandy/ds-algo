@@ -4,6 +4,9 @@ import com.kandy.algorithm.leetcode.ListNode;
 
 /**
  * 25. K个一组翻转链表
+ * 代码模块化的思路：
+ *  大框架：链表遍历找"组"，组与组之间关系的处理
+ *  小框架：组内反转链表
  */
 public class LC25K个一组翻转链表 {
     public ListNode reverseKGroup(ListNode head, int k) {
@@ -39,6 +42,7 @@ public class LC25K个一组翻转链表 {
     ListNode getEnd(ListNode head, int k) {
         while (head != null) {
             k--;
+            //走k-1步
             if (k == 0) return head;
             head = head.next;
         }

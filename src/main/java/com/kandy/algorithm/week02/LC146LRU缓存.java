@@ -4,7 +4,10 @@ import java.util.HashMap;
 
 /**
  * 146. LRU 缓存
- * 无序哈希表 + 双链表 LinkedHashMap
+ * LRU -least recently used，最近最少使用（淘汰最旧数据）
+ * 无序哈希表 + 双向链表 LinkedHashMap
+ *  双向链表用于按时间顺序保存数据
+ *  Hash Table 用于把key映射到链表结点（指针/引用）
  */
 public class LC146LRU缓存 {
     class LRUCache {
