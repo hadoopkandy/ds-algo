@@ -9,6 +9,8 @@ import java.util.Queue;
  * 关键点：任何边界上的 'O' 都不会被填充为 'X'。 任何不在边界上，或不与边界上的 'O' 相连的 'O' 最终都会被填充为 'X'
  * 从没有访问过的边界点'O'出发，进行DFS或者BFS遍历，将其相连的'O'标记为已访问。
  * 根据题目意思：没有访问过的'O'标记成'X'即可
+ *
+ * 特征：地图类DFS/、判重、方向数组
  */
 public class LC130被围绕的区域 {
     public void solve(char[][] board) {
