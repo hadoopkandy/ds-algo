@@ -12,7 +12,7 @@ public class LC25K个一组翻转链表 {
     public ListNode reverseKGroup(ListNode head, int k) {
         //protect是一个访问入口，链表的保护节点（提供入口，防止null异常）
         ListNode protect = new ListNode(0, head);
-        ListNode last = protect;
+        ListNode last = protect;//
         //head这里是指向每个分组的head
         while (head != null) {
             //1.分组（往后走k-1步，找到一组）
@@ -26,7 +26,7 @@ public class LC25K个一组翻转链表 {
 
             //2.一组内部(head到end之间)要反转(调用反转链表)
             reverseList(head, nextHead);
-            //3.更新每组跟前一组、后一组之间的边
+            //3.更新每组跟前一组last、后一组nextHead之间的边
             //1->4,第一次protect->next =2
             //当前组：变成了tail->...->head
             last.next = tail;
