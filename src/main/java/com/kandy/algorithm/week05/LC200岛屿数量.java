@@ -41,9 +41,10 @@ public class LC200岛屿数量 {
         q.offer(new Pair<Integer, Integer>(sx, sy));
         visit[sx][sy] = true;
         while (!q.isEmpty()) {
+            //第二步：取队头
             int x = q.peek().getKey();
             int y = q.poll().getValue();
-            // 扩展所有出边（四个方向）
+            // 第三步：扩展队头 扩展所有出边（四个方向）
             for (int i = 0; i < 4; i++) {
                 int nx = x + dx[i];
                 int ny = y + dy[i];
