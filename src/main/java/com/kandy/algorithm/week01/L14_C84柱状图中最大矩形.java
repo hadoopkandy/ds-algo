@@ -11,7 +11,7 @@ import java.util.Stack;
  * while(栈顶元素与新元素不满足单调性)  累加宽度、更新答案、出栈
  * 入栈
  */
-public class LC84柱状图中最大矩形 {
+public class L14_C84柱状图中最大矩形 {
     public int largestRectangleArea(int[] heights) {
         int n = heights.length;
         int[] heights_with_zero = Arrays.copyOf(heights, n + 1);

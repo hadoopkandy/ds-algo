@@ -4,14 +4,18 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
+ * https://www.acwing.com/problem/content/description/138/
  * acwing136 邻值查找
+ * 按数值排序,建立有序双链表
+ * 链表虽不能随机访问，但是可以记录A数组每个下标对应的链表结点
+ * 倒序考虑每个下标,只需要在链表中查找前驱、后继,然后删除节点
  *
  * 关键点：
  * "索引"的灵活性 按照下标Node数组、按值链表
  * 不同"索引"的数据结构之间建立"映射"关系
  * 倒序考虑问题
  */
-public class Main邻值查找 {
+public class L06_Main邻值查找 {
     public static class Node {
         long val;
         int idx;
@@ -65,6 +69,7 @@ public class Main邻值查找 {
         //      a[1] a[5] a[3] a[4] a[2]
         // a[rk] = [1, 2,   3,   4,   5]
         Arrays.sort(rk, 1, n + 1, (rki, rkj) -> { return a[rki] - a[rkj]; });
+
         // 保护结点
         Node head = new Node();
         Node tail = new Node();

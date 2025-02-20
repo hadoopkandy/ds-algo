@@ -3,9 +3,11 @@ package com.kandy.algorithm.week01;
 import java.util.Stack;
 
 /**
+ * https://leetcode.cn/problems/valid-parentheses/description/
  * 20. 有效的括号
+ * 思路：最近相关性，用Stack数据结构
  */
-public class LC20有效的括号 {
+public class L09_C20有效的括号 {
     public boolean isValid(String s) {
         Stack<Character> a = new Stack<>();
         for (char ch : s.toCharArray()) {
@@ -23,7 +25,7 @@ public class LC20有效的括号 {
     }
 
     public static void main(String[] args) {
-        LC20有效的括号 sol = new LC20有效的括号();
+        L09_C20有效的括号 sol = new L09_C20有效的括号();
         System.out.println(sol.isValid("()"));
         System.out.println(sol.isValid("()[]{}"));
         System.out.println(sol.isValid("(]"));

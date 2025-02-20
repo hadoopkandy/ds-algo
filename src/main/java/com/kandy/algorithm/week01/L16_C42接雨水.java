@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * 42.接雨水
  */
-public class LC42接雨水 {
+public class L16_C42接雨水 {
     //横条 单调栈
     public int trap(int[] heights) {
         Stack<Rect> s = new Stack<>();
@@ -32,7 +32,7 @@ public class LC42接雨水 {
 
     public static void main(String[] args) {
         int[] heights = new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
-        LC42接雨水 code = new LC42接雨水();
+        L16_C42接雨水 code = new L16_C42接雨水();
         final int trap = code.trap2(heights);
         System.out.println(trap);
     }
