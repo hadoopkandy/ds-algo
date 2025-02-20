@@ -11,7 +11,7 @@ import java.util.*;
  * while(队尾与新元素不满足单调性) 队尾出队
  * 新元素出队
  */
-public class LC239滑动窗口最大值 {
+public class L15_C239滑动窗口最大值 {
 
     public int[] maxSlidingWindow1(int[] nums, int k) {
         int n = nums.length;
@@ -69,7 +69,7 @@ public class LC239滑动窗口最大值 {
     }
 
     public static void main(String[] args) {
-        LC239滑动窗口最大值 sol = new LC239滑动窗口最大值();
+        L15_C239滑动窗口最大值 sol = new L15_C239滑动窗口最大值();
 
         int[] nums1 = new int[]{5, 3, 4, 1};
         System.out.println(Arrays.toString(sol.maxSlidingWindow(nums1, 3)));

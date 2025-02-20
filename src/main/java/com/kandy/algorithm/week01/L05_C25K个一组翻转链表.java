@@ -3,12 +3,13 @@ package com.kandy.algorithm.week01;
 import com.kandy.algorithm.leetcode.ListNode;
 
 /**
+ * https://leetcode.cn/problems/reverse-nodes-in-k-group/description/
  * 25. K个一组翻转链表
  * 代码模块化的思路：
  *  大框架：链表遍历找"组"，组与组之间关系的处理
  *  小框架：组内反转链表
  */
-public class LC25K个一组翻转链表 {
+public class L05_C25K个一组翻转链表 {
     public ListNode reverseKGroup(ListNode head, int k) {
         //protect是一个访问入口，链表的保护节点（提供入口，防止null异常）
         ListNode protect = new ListNode(0, head);
@@ -51,6 +52,7 @@ public class LC25K个一组翻转链表 {
 
     // 组的内部反转
     private void reverseList(ListNode head, ListNode stop) {
+        //当前组的head先不考虑
         ListNode now = head.next;
         ListNode last = head;
         // 遍历

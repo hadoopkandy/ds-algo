@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
+ * https://leetcode.cn/problems/basic-calculator-ii/description/
  * 227. 基本计算器 II
  * 3+2*2
  * 运算符栈：+ *
@@ -16,7 +17,7 @@ import java.util.Stack;
  * 后缀表达式: 3 2 + 2 -
  *
  */
-public class LC227基本计算器II {
+public class L12_C227_中缀表达式求值_基本计算器II {
 
     public int calculate(String s) {
         //运算符
@@ -89,7 +90,7 @@ public class LC227基本计算器II {
     }
 
     public static void main(String[] args) {
-        LC227基本计算器II code = new LC227基本计算器II();
+        L12_C227_中缀表达式求值_基本计算器II code = new L12_C227_中缀表达式求值_基本计算器II();
         System.out.println(code.calculate("3+2*2"));
     }
 }

@@ -3,9 +3,11 @@ package com.kandy.algorithm.week01;
 import java.util.Stack;
 
 /**
+ * https://leetcode.cn/problems/min-stack/description/
  * 155. 最小栈
+ * 用preMin 记录最小值过程
  */
-public class LC155最小栈 {
+public class L10_C155最小栈 {
     class MinStack {
         private Stack<Integer> s;
         private Stack<Integer> preMin;
