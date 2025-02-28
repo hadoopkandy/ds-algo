@@ -4,10 +4,15 @@ package com.kandy.algorithm.week02;
 import java.util.*;
 
 /**
+ * https://leetcode.cn/problems/two-sum/description/
  * 1. 两数之和
  * 454. 四数相加 II 和此题解法类似 分组 + 哈希表
+ * 基本思路:枚举一个数x,找它前面有没有target-x
+ * 所以建立一个数值到下标的hash map就可以了
+ * 对于每个数x,先查询target-x,再插入x
+ * 时间复杂度O(n)
  */
-public class LC1两数之和 {
+public class L01_C1两数之和 {
     //方法一:HashMap
     public int[] twoSum(int[] nums, int target) {
         int len = nums.length;
@@ -44,7 +49,7 @@ public class LC1两数之和 {
 
     public static void main(String[] args) {
 
-        LC1两数之和 sol = new LC1两数之和();
+        L01_C1两数之和 sol = new L01_C1两数之和();
 
         System.out.println(Arrays.toString(sol.twoSum(new int[]{3, 2, 4}, 6)));
     }

@@ -7,9 +7,10 @@ import java.util.Queue;
 import java.util.Stack;
 
 /**
+ * https://leetcode.cn/problems/maximum-depth-of-binary-tree/description/
  * 104. 二叉树的最大深度
  */
-public class LC104二叉树的最大深度 {
+public class L12_C104二叉树的最大深度 {
 
     /**
      * 广度优先搜索 BFS

@@ -6,11 +6,12 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 /**
+ * https://leetcode.cn/problems/invert-binary-tree/description/
  * 226. 翻转二叉树
  */
-public class LC226翻转二叉树 {
+public class L09_C226翻转二叉树 {
     /**
-     * 递归方式遍历反转
+     * 递归方式遍历翻转
      * @param root
      * @return
      */

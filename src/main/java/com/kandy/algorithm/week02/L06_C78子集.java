@@ -4,11 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * https://leetcode.cn/problems/subsets/description/
  * 78. 子集 （选或不选，任意个）
  * 给你一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）
  * 状态：index  + subset
  */
-public class LC78子集 {
+public class L06_C78子集 {
     public List<List<Integer>> subsets(int[] nums) {
         ans = new ArrayList<List<Integer>>();
         chosen = new ArrayList<Integer>();
@@ -61,10 +62,8 @@ call findSubsets index:3 chosen:[1, 2, 3]
 1 还原现场
  */
     private void findSubsets(int[] nums, int i) {
-//        System.out.println("call findSubsets index:"+index + " chosen:"+chosen );
         //递归边界
         if (i == nums.length) {
-//            System.out.println(chosen +" 加入答案");
             ans.add(new ArrayList<Integer>(chosen));
             return;
         }
@@ -74,9 +73,7 @@ call findSubsets index:3 chosen:[1, 2, 3]
 
         //选
         chosen.add(nums[i]);
-//        System.out.println(nums[index] +" 加入chosen");
         findSubsets(nums, i + 1);
-//        System.out.println(chosen.get(chosen.size() - 1) +" 还原现场");
         //还原现场
         chosen.remove(chosen.size() - 1);
     }
@@ -85,7 +82,7 @@ call findSubsets index:3 chosen:[1, 2, 3]
     private List<Integer> chosen;
 
     public static void main(String[] args) {
-        LC78子集 code = new LC78子集();
+        L06_C78子集 code = new L06_C78子集();
         System.out.println(code.subsets(new int[]{1, 2, 3}));
     }
 
