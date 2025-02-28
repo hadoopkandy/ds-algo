@@ -5,9 +5,10 @@ import com.kandy.algorithm.leetcode.TreeNode;
 import java.util.Stack;
 
 /**
+ * https://leetcode.cn/problems/validate-binary-search-tree/description/
  * 98. 验证二叉搜索树
  */
-public class LC98验证二叉搜索树 {
+public class L10_C98验证二叉搜索树 {
     /**
      * 中序遍历
      * @param root

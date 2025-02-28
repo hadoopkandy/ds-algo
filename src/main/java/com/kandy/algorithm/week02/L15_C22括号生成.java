@@ -6,9 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
+ * https://leetcode.cn/problems/generate-parentheses/description/
  * 22.括号生成
  */
-public class LC22括号生成 {
+public class L15_C22括号生成 {
     public List<String> generateParenthesis2(int n) {
         List<String> ans = new ArrayList<String>();
         backtrack(ans, new StringBuilder(), 0, 0, n);
@@ -73,7 +74,7 @@ public class LC22括号生成 {
  */
 
     public static void main(String[] args) {
-        LC22括号生成 code = new LC22括号生成();
+        L15_C22括号生成 code = new L15_C22括号生成();
         System.out.println(code.generateParenthesis(3));
     }
 }

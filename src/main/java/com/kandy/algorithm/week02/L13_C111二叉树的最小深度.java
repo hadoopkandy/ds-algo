@@ -3,9 +3,10 @@ package com.kandy.algorithm.week02;
 import com.kandy.algorithm.leetcode.TreeNode;
 
 /**
+ * https://leetcode.cn/problems/minimum-depth-of-binary-tree/description/
  * 111. 二叉树的最小深度
  */
-public class LC111二叉树的最小深度 {
+public class L13_C111二叉树的最小深度 {
     public int minDepth(TreeNode root) {
         // 不同于maxDepth的另一种写法
         // 也可以采用maxDepth的写法

@@ -5,9 +5,14 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
+ * https://leetcode.cn/problems/substring-with-concatenation-of-all-words/description/
  * 30. 串联所有单词的子串
+ * 遇到难题,先分解
+ * 不会求解,可以先想想判定：
+ * 给一个s的子串、words,判定这个子串是不是words的串联？
+ * 把子串划分以后,其实就是比较两个Hash map是否相等
  */
-public class LC30串联所有单词的子串 {
+public class L04_C30串联所有单词的子串 {
     /**
      * O(length of s * total length of words )
      *
@@ -126,7 +131,7 @@ oba--
     }
 
     public static void main(String[] args) {
-        LC30串联所有单词的子串 code = new LC30串联所有单词的子串();
+        L04_C30串联所有单词的子串 code = new L04_C30串联所有单词的子串();
         System.out.println(code.findSubstring2("barfoothefoobarman", new String[]{"foo", "bar"}));
         System.out.println(code.findSubstring2("wordgoodgoodgoodbestword", new String[]{"word", "good", "best", "good"}));
     }

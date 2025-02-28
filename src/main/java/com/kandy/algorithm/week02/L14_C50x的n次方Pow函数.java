@@ -1,9 +1,10 @@
 package com.kandy.algorithm.week02;
 
 /**
+ * https://leetcode.cn/problems/powx-n/description/
  * 50. Pow(x, n)
  */
-public class LC50x的n次方Pow函数 {
+public class L14_C50x的n次方Pow函数 {
     // 分治解法
     public double myPow(double x, int n) {
         //0次方等于1
@@ -21,7 +22,7 @@ public class LC50x的n次方Pow函数 {
     }
 
     public static void main(String[] args) {
-        LC50x的n次方Pow函数 lc  = new LC50x的n次方Pow函数();
+        L14_C50x的n次方Pow函数 lc  = new L14_C50x的n次方Pow函数();
         System.out.println(lc.myPow(1.0,-2147483648));
         Math.pow(1.0,-2147483648);
     }
