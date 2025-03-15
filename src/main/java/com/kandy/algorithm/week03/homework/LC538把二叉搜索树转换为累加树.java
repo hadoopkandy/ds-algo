@@ -4,6 +4,9 @@ import com.kandy.algorithm.leetcode.TreeNode;
 
 import java.util.Stack;
 
+/**
+ * https://leetcode.cn/problems/convert-bst-to-greater-tree/
+ */
 public class LC538把二叉搜索树转换为累加树 {
     //中序遍历迭代写法，方向相反，先一路向右，再往左
     public TreeNode convertBST(TreeNode root) {

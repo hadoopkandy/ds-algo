@@ -3,6 +3,7 @@ package com.kandy.algorithm.week03.homework;
 import java.util.*;
 
 /**
+ * https://leetcode.cn/problems/design-twitter/description/
  * 关键点：出边数组 + K个有序链表排序  ListNode中加入id用于排序
  */
 public class LC355设计推特 {

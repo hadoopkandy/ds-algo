@@ -15,7 +15,7 @@ import com.kandy.algorithm.leetcode.TreeNode;
  *  在检索过程经过的结点中
  *
  */
-public class 二叉搜索树后继模板面试题0406 {
+public class L16_二叉搜索树后继模板面试题0406 {
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
         return getNext(root, p.val);
     }

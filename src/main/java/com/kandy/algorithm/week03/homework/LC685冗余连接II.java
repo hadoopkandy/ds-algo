@@ -59,15 +59,17 @@ public class LC685冗余连接II {
             removeEdge(edge[0], edge[1]);
             hasCycle = false;
             visit();
+            //删除该边后仍有环和入度为2的点，说明该边不是要的答案
             if (hasCycle || hasConflict()) {
                 addToEdge(x, y);
             } else {
+                //删除后没有环了，也没有入度为2的点，就是要的答案
                 return new int[]{x, y};
             }
         }
         return null;
     }
-
+    //是否存在入度为2的点
     private boolean hasConflict() {
         for (int i = 1; i <= n; i++) {
             if (from.get(i).size() == 2) {

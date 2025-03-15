@@ -1,6 +1,7 @@
 package com.kandy.algorithm.week03;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -9,7 +10,7 @@ import java.util.List;
  *
  * 关键点：出边数组、无向图深度优先遍历找环、visit数组，避免重复访问
  */
-public class LC684冗余连接DFS找环法 {
+public class L11_C684冗余连接DFS找环法 {
     public int[] findRedundantConnection(int[][] edges) {
         // 出现过的最大的点就是n
         n = 0;
@@ -39,7 +40,7 @@ public class LC684冗余连接DFS找环法 {
             addEdge(x, y);
             addEdge(y, x);
 
-            // 每加一条边，看图中是否多了环c
+            // 每加一条边，看图中是否多了环
             for (int i = 1; i <= n; i++) visit[i] = false;
             dfs(x, -1);
             if (hasCycle) return edge;
@@ -71,4 +72,13 @@ public class LC684冗余连接DFS找环法 {
     private List<List<Integer>> to;
     boolean hasCycle;
     private boolean[] visit;
+
+    public static void main(String[] args) {
+        int[][] edges = new int[3][2];
+        edges[0] = new int[]{1,2};
+        edges[1] = new int[]{2,3};
+        edges[2] = new int[]{1,3};
+        L11_C684冗余连接DFS找环法 solution = new L11_C684冗余连接DFS找环法();
+        System.out.println(Arrays.toString(solution.findRedundantConnection(edges)));
+    }
 }

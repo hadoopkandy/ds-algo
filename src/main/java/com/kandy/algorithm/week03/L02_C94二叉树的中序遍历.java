@@ -8,7 +8,7 @@ import java.util.*;
  * 94.二叉树的中序遍历
  * 迭代方式：一路到左 弹栈 右子树
  */
-public class LC94二叉树的中序遍历 {
+public class L02_C94二叉树的中序遍历 {
 
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> seq = new ArrayList<>();
@@ -50,7 +50,7 @@ public class LC94二叉树的中序遍历 {
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(5,new TreeNode(4,new TreeNode(1),new TreeNode(2)),new TreeNode(6));
-        LC94二叉树的中序遍历 sol = new LC94二叉树的中序遍历();
+        L02_C94二叉树的中序遍历 sol = new L02_C94二叉树的中序遍历();
         System.out.println(sol.inorderTraversal(root));
     }
 

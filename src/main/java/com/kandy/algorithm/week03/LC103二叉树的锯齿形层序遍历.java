@@ -38,4 +38,18 @@ public class LC103二叉树的锯齿形层序遍历 {
         return ans;
     }
 
+    public static void main(String[] args) {
+        TreeNode three = new TreeNode(3);
+        TreeNode nine = new TreeNode(9);
+        TreeNode twenty = new TreeNode(20);
+        TreeNode fifteen = new TreeNode(15);
+        TreeNode seven = new TreeNode(7);
+        three.left = nine;
+        three.right = twenty;
+        twenty.left = fifteen;
+        twenty.right = seven;
+        LC103二叉树的锯齿形层序遍历 solution = new LC103二叉树的锯齿形层序遍历();
+        System.out.println(solution.zigzagLevelOrder(three));
+    }
+
 }
