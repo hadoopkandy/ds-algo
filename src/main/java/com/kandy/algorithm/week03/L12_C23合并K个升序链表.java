@@ -5,6 +5,7 @@ import com.kandy.algorithm.leetcode.ListNode;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.PriorityQueue;
 
 /**
  * 二叉堆的实现
@@ -23,7 +24,7 @@ import java.util.List;
  * 入堆 插入队尾，自底向上调整
  * 出堆 与堆尾交换，删堆尾，自顶向下与较小者调整
  */
-public class LC23合并K个升序链表 {
+public class L12_C23合并K个升序链表 {
     // 堆结点（key用于比较的关键码，listNode可以是任意的附带信息）
     public class Node {
         int key;
@@ -81,6 +82,11 @@ public class LC23合并K个升序链表 {
         }
 
         //自下而上堆化
+        /**
+         * 注意 while这里的条件判断
+         * 本题的写法是第一个元素存储在索引(下标) 为0 位置： 考虑 (p - 1) / 2 >=0  所以p >=1 等价写法 p>0
+         * 如果第一个元素存储在索引(下标) 为1 位置的话：p/2 >=1 所以 p>=2 等价写法 p >1
+         */
         void heapifyUp(int p) {
             while (p > 0) {
                 int fa = (p - 1) / 2;
@@ -116,6 +122,7 @@ public class LC23合并K个升序链表 {
         List<Node> heap;
     }
 
+    //思路三：自己实现二叉堆
     // O(元素个数*logK)
     // O(total*logK)
     public ListNode mergeKLists(ListNode[] lists) {
@@ -140,4 +147,30 @@ public class LC23合并K个升序链表 {
         }
         return head.next;
     }
+
+    //思路二: 优先队列实现（java PriorityQueue默认小顶堆）
+    // 1.将lists 中所有节点放入优先队列中
+    // 2.迭代优先队列，每次出队的最小元素节点合并到新链表末尾
+    // 3.迭代的链表节点不是未节点，取下一个节点继续放入优先队列中
+    public ListNode mergeKLists2(ListNode[] lists) {
+        ListNode protect = new ListNode(0);
+        ListNode tail = protect;
+        //实现Comparator接口，定义ListNode的大小比较方法
+        PriorityQueue<ListNode> queue = new PriorityQueue<>((o1, o2) -> Integer.compare(o1.val, o2.val));
+        for (ListNode node : lists) {
+            if (node != null) {
+                queue.add(node);
+            }
+        }
+        while (!queue.isEmpty()) {
+            final ListNode curr = queue.poll();
+            tail.next = curr;
+            tail = tail.next;
+            if (curr.next != null) {
+                queue.add(curr.next);
+            }
+        }
+        return protect.next;
+    }
+    //思路一：分钟治合并,递归方式实现 参考 com.kandy.algorithm.week02.homework.LC23合并K个升序链表
 }

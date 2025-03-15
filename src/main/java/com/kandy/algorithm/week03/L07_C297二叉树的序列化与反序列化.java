@@ -5,7 +5,7 @@ import com.kandy.algorithm.leetcode.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LC297二叉树的序列化与反序列化 {
+public class L07_C297二叉树的序列化与反序列化 {
     public class Codec {
 
         // Encodes a tree to a single string.

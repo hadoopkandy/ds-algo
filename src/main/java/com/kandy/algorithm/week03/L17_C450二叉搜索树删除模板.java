@@ -9,7 +9,7 @@ import com.kandy.algorithm.leetcode.TreeNode;
  * 2.如果有两棵子树，需要找到后继，先删除后继，再用后继结点，代替val的位置
  * （因为后继的右子树一直往左走到底，所以它最多只会有一棵子树，容易删，且不会破坏BST性质）
  */
-public class 二叉搜索树删除模板LC450 {
+public class L17_C450二叉搜索树删除模板 {
     // 在以root为根的子树中删除key，返回新的根
     public TreeNode deleteNode(TreeNode root, int key) {
         //找不到，就不管了
@@ -34,4 +34,46 @@ public class 二叉搜索树删除模板LC450 {
         }
         return root;
     }
+
+    public static void main(String[] args) {
+        /*
+        deleteNode(5,5)
+        找后继：右子树一路向左 找到next = 6
+        delete(9,6) => 9.left = 8
+        root.val = 6
+         */
+        L17_C450二叉搜索树删除模板 solution = new L17_C450二叉搜索树删除模板();
+        TreeNode five = new TreeNode(5);
+        TreeNode two = new TreeNode(2);
+        TreeNode nine = new TreeNode(9);
+        TreeNode int_min = new TreeNode(Integer.MIN_VALUE);
+        TreeNode three = new TreeNode(3);
+        TreeNode six = new TreeNode(6);
+        TreeNode int_max = new TreeNode(Integer.MAX_VALUE);
+        TreeNode one = new TreeNode(1);
+        TreeNode eight = new TreeNode(8);
+        five.left = two;
+        five.right = nine;
+        two.left = int_min;
+        two.right = three;
+        nine.left = six;
+        nine.right = int_max;
+        int_min.right = one;
+        six.right = eight;
+        System.out.println(solution.deleteNode(five,5).val);
+
+//        TreeNode five = new TreeNode(5);
+//        TreeNode three = new TreeNode(3);
+//        TreeNode six = new TreeNode(6);
+//        TreeNode two = new TreeNode(2);
+//        TreeNode four = new TreeNode(4);
+//        TreeNode seven = new TreeNode(7);
+//        five.left = three;
+//        five.right = six;
+//        three.left = two;
+//        three.right = four;
+//        six.right =seven;
+//        System.out.println(solution.deleteNode(five,3).val);
+    }
+
 }

@@ -10,7 +10,7 @@ import java.util.*;
  * 二叉树的前序遍历：根->左子树->右子树
  * 迭代方式：根 右 左 顺序入栈
  */
-public class LC144二叉树的前序遍历 {
+public class L01_C144二叉树的前序遍历 {
 
     //方法一 递归
     public List<Integer> preorderTraversal(TreeNode root) {
@@ -53,7 +53,7 @@ public class LC144二叉树的前序遍历 {
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(5,new TreeNode(4,new TreeNode(1),new TreeNode(2)),new TreeNode(6));
-        LC144二叉树的前序遍历 sol = new LC144二叉树的前序遍历();
+        L01_C144二叉树的前序遍历 sol = new L01_C144二叉树的前序遍历();
         System.out.println(sol.preorderTraversal2(root));
     }
 }

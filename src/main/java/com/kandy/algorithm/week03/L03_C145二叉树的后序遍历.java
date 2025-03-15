@@ -11,7 +11,7 @@ import java.util.*;
  *
  * 迭代方式：入栈顺序：根-左-右 出栈顺序：根-右-左， 最后翻转结果
  */
-public class LC145二叉树的后序遍历 {
+public class L03_C145二叉树的后序遍历 {
 
     //方法一 递归
     public List<Integer> postorderTraversal(TreeNode root) {
@@ -53,7 +53,7 @@ public class LC145二叉树的后序遍历 {
     }
     public static void main(String[] args) {
         TreeNode root = new TreeNode(5,new TreeNode(4,new TreeNode(1),new TreeNode(2)),new TreeNode(6));
-        LC145二叉树的后序遍历 sol = new LC145二叉树的后序遍历();
+        L03_C145二叉树的后序遍历 sol = new L03_C145二叉树的后序遍历();
         System.out.println(sol.postorderTraversal2(root));
     }
 }

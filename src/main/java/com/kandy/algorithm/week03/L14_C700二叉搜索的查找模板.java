@@ -10,7 +10,7 @@ import com.kandy.algorithm.leetcode.TreeNode;
  * 2.若关键码大于val，递归检索左子树（或不存在）
  * 3.若关键码小于val,递归检索右子树（或不存在）
  */
-public class 二叉搜索的查找模板LC700 {
+public class L14_C700二叉搜索的查找模板 {
     public TreeNode searchBST(TreeNode root, int val) {
         if (root == null) {
             return null;

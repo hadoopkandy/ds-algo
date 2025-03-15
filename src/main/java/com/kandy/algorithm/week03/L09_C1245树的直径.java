@@ -13,7 +13,7 @@ import java.util.*;
  *
  * 关键点：出边数组存储图、基于queue的广度优先遍历记录深度
  */
-public class LC1245树的直径 {
+public class L09_C1245树的直径 {
     public int treeDiameter(List<List<Integer>> edges) {
         to = new ArrayList<>();
         n = 0;
@@ -84,7 +84,7 @@ public class LC1245树的直径 {
         edges.add(Arrays.asList(2, 3));
         edges.add(Arrays.asList(1, 4));
         edges.add(Arrays.asList(4, 5));
-        LC1245树的直径 lc = new LC1245树的直径();
+        L09_C1245树的直径 lc = new L09_C1245树的直径();
         System.out.println(lc.treeDiameter(edges));
     }
 

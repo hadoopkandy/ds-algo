@@ -14,7 +14,7 @@ import java.util.Set;
  * p向上直到root标红色
  * q向上，第一次遇到红色时，就找到了LCA
  */
-public class LC236二叉树最近公共的祖先LCA {
+public class L10_C236二叉树最近公共的祖先LCA {
     private TreeNode ans;
 
     //方法一:递归
