@@ -6,7 +6,7 @@ package com.kandy.algorithm.week04;
  * 若f(lmid) <= f(rmid)，则函数必然在lmid处单调递增，极值在[lmid,r]上
  * 若f(lmid) > f(rmid)，则函数必然在rmid处单调递减，极值在[l,rmid]上
  */
-public class LC162寻找峰值 {
+public class L09_C162寻找峰值 {
     //极大值
     public int findPeakElement(int[] nums) {
         int left = 0, right = nums.length - 1;

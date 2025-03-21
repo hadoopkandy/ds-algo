@@ -1,11 +1,12 @@
-package com.kandy.algorithm.week04.homework;
+package com.kandy.algorithm.week04;
 
 import java.util.TreeMap;
 
 /**
+ * https://leetcode.cn/problems/sliding-window-maximum/description/
  * 实现思路和优选队列差不多，主要是将PriorityQueue换成TreeMap、TreeSet均可
  */
-public class LC239滑动窗口最大值 {
+public class L03_C239滑动窗口最大值 {
     public int[] maxSlidingWindow1(int[] nums, int k) {
         //<关键码,下标>
         TreeMap<Integer, Integer> treeMap = new TreeMap<>((o1, o2) -> Integer.compare(o2, o1));

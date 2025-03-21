@@ -1,9 +1,12 @@
-package com.kandy.algorithm.week04.homework;
+package com.kandy.algorithm.week04;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main普通平衡树 {
+/**
+ * https://www.acwing.com/problem/content/255/
+ */
+public class L02_Main普通平衡树 {
     public static final int RANGE = 10000010;
 
     public static int rand() {
@@ -167,7 +170,7 @@ public class Main普通平衡树 {
             return p;
         }
 
-        //p的左孩子绕p向右旋转 参考PPT里 0绕2右旋
+        //p的左孩子权值大,p的左孩子绕p向右旋转 参考PPT里 0绕2右旋
         private Node zig(Node p) {
             Node q = p.left; //找到p的左孩子q
             p.left = q.right; //p的左孩子变成q的右孩子
@@ -178,7 +181,7 @@ public class Main普通平衡树 {
             return q; //q变成看新的根
         }
 
-        //p的右孩子绕p向左旋转  参考PPT里 2绕0左旋
+        //p的右孩子权值大,p的右孩子绕p向左旋转  参考PPT里 2绕0左旋
         private Node zag(Node p) {
             Node q = p.right;
             p.right = q.left;

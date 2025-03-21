@@ -6,7 +6,7 @@ package com.kandy.algorithm.week04;
  * 上下界
  * 随机访问
  */
-public class LC704二分查找 {
+public class L05_C704二分查找 {
     public int search(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
         while (left <= right) {

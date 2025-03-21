@@ -3,7 +3,7 @@ package com.kandy.algorithm.week04;
 /**
  * 满足ans*ans<=x 条件时，最大的ans 前驱型
  */
-public class LC69x的平方根 {
+public class L08_C69x的平方根 {
     //整数二分
     public int mySqrt(int x) {
         // 找最大的ans，满足ans*ans<=x
@@ -13,7 +13,7 @@ public class LC69x的平方根 {
             int mid = (left + right + 1) / 2;
             //mid * mid <= x 可能int越界
             if (mid <= x / mid) {
-                left = mid;
+                left = mid; //条件满足里面要大的1
             } else {
                 right = mid - 1;
             }

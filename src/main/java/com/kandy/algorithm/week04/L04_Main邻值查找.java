@@ -1,10 +1,11 @@
-package com.kandy.algorithm.week04.homework;
+package com.kandy.algorithm.week04;
 
 import java.util.Objects;
 import java.util.Scanner;
 import java.util.TreeSet;
 
 /**
+ * https://www.acwing.com/problem/content/138/
  * acwing136 邻值查找
  * <p>
  * 关键点：
@@ -12,7 +13,7 @@ import java.util.TreeSet;
  * 不同"索引"的数据结构之间建立"映射"关系
  * 倒序考虑问题
  */
-public class Main邻值查找 {
+public class L04_Main邻值查找 {
 
     public static class Node {
         long val;

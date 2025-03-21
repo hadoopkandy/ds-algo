@@ -1,12 +1,13 @@
-package com.kandy.algorithm.week04.homework;
+package com.kandy.algorithm.week04;
 
 /**
+ * https://leetcode.cn/problems/design-skiplist/description/
  * 1206.设计跳表
  * 跳表使用空间换时间的设计思路，通过构建多级索引来提高查询的效率，实现了基于链表的“二分查找”。
  * 跳表是一种动态数据结构，支持快速地插入、删除、查找操作，时间复杂度都是 O(logn)
  * Redis 有序集合 Sorted Set
  */
-public class LC1206设计跳表 {
+public class L01_C1206设计跳表 {
     static class Skiplist {
         /**
          * 最大层数

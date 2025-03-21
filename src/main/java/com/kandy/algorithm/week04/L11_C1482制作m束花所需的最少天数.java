@@ -3,7 +3,7 @@ package com.kandy.algorithm.week04;
 /**
  * 后继型
  */
-public class LC1482制作m束花所需的最少天数 {
+public class L11_C1482制作m束花所需的最少天数 {
     public int minDays(int[] bloomDay, int m, int k) {
         int latestBloom = 0;
         for (int bloom : bloomDay) {

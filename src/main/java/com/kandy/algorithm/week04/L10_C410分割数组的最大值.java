@@ -3,7 +3,7 @@ package com.kandy.algorithm.week04;
 /**
  * 后继型
  */
-public class LC410分割数组的最大值 {
+public class L10_C410分割数组的最大值 {
     public int splitArray(int[] nums, int m) {
         int left = 0; // 下界：最大的一个nums[i]
         int right = 0; // 上界：所有元素和
@@ -38,7 +38,7 @@ public class LC410分割数组的最大值 {
     }
 
     public static void main(String[] args) {
-        LC410分割数组的最大值 lc = new LC410分割数组的最大值();
+        L10_C410分割数组的最大值 lc = new L10_C410分割数组的最大值();
         int[] nums = new int[]{7, 2, 5, 10, 8};
         System.out.println(lc.splitArray(nums, 2));
     }
