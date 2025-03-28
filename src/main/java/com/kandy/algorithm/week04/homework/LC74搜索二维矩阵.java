@@ -1,7 +1,9 @@
 package com.kandy.algorithm.week04.homework;
 
 /**
- * 两次二分查找 列查找行，行查找元素
+ * https://leetcode.cn/problems/search-a-2d-matrix
+ * 思路一：两次二分查找 列查找行，行查找元素
+ * 思路二：将二维数组映射成一维数组进行标准二分查找
  */
 public class LC74搜索二维矩阵 {
     public boolean searchMatrix(int[][] matrix, int target) {

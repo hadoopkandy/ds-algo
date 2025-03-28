@@ -17,11 +17,11 @@ import java.util.Scanner;
  */
 public class L06_Main邻值查找 {
     public static class Node {
-        long val;
-        int idx;
+        long val;//原始数组的值
+        int idx;//原始数组的下标
         Node pre;
         Node next;
-    };
+    }
 
     static int SIZE = 100005;
     static int[] a = new int[SIZE]; //原始数据
@@ -103,3 +103,36 @@ public class L06_Main邻值查找 {
         System.out.print(sb);
     }
 }
+/*
+输入:
+5
+1 5 3 4 2
+
+输出:
+4 1
+2 1
+1 3
+1 1
+
+1.根据题目的意思,得出是求前驱 后继
+2.倒序考虑问题
+如果正着考虑,每次都要排序，要考虑当前这个数插在有序序列的什么位置
+先把所有数全排好序,倒着考虑,每次求完前驱后继后,把当前这个数删除即可
+先考虑 2的前驱后继,把2 删了
+再考虑 4的前驱后继,把4 删了
+依次类推
+
+3.数据结构
+a[] 原始数据 [1,5,3,4,2]
+rk[] 存排名的下标  [1,5,3,4,2] （排第1的是下标1, 排第2的是下标5,排第3的是下标3,排第4的是下标4,排第5的下标2）
+pos[] 指针数组,通过它索引到链表
+    pos[rk[i]] = a[rk[i]]
+    pos[1] = 1  idx = 1
+    pos[5] = 2  idx = 5
+    pos[3] = 3  idx = 3
+    pos[4] = 4  idx = 4
+    pos[2] = 5  idx = 2
+a[rk[i]] 有序序列 pos[i] 找到链表节点
+通过pos[i] 可以找到a[i] 在双链表中的Node节点
+带保护节点head tail的双链表
+ */

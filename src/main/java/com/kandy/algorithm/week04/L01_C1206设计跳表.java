@@ -100,7 +100,7 @@ public class L01_C1206设计跳表 {
          * @return
          */
         private Node findClosest(Node node, int levelIndex, int value) {
-            while ((node.next[levelIndex]) != null && value > node.next[levelIndex].value) {
+            while ((node.next[levelIndex]) != null &&  node.next[levelIndex].value < value) {
                 node = node.next[levelIndex];
             }
             return node;
@@ -137,6 +137,19 @@ public class L01_C1206设计跳表 {
                 return String.valueOf(value);
             }
         }
+    }
+
+    public static void main(String[] args) {
+        Skiplist skiplist = new Skiplist();
+        skiplist.add(1);
+        skiplist.add(2);
+        skiplist.add(3);
+        System.out.println(skiplist.search(0));// 返回 false
+        skiplist.add(4);
+        System.out.println(skiplist.search(1));   // 返回 true
+        System.out.println(skiplist.erase(0));    // 返回 false，0 不在跳表中
+        System.out.println(skiplist.erase(1));    // 返回 true
+        System.out.println(skiplist.search(1));   // 返回 false，1 已被擦除
     }
 
 }

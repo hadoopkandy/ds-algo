@@ -1,5 +1,8 @@
 package com.kandy.algorithm.week04.homework;
 
+/**
+ * https://leetcode.cn/problems/koko-eating-bananas/description/
+ */
 public class LC875爱吃香蕉的珂珂 {
     public int minEatingSpeed(int[] piles, int h) {
         int left = 1;//下界每小时1根

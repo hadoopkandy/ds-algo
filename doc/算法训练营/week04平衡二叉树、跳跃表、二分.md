@@ -54,9 +54,22 @@ AVL树在插入、删除时,沿途更新结点的高度值
 ```
 
 [设计跳表](https://leetcode.cn/problems/design-skiplist/description/)<br/>
+```
+  search：从跳表的当前的最大层数 level 层开始查找，找到离当前节点最近的结点（最后一个小于value的点）,如果它的next value 等于value 直接返回
+  add:   从跳表的当前的最大层数 level 层开始查找，找到离当前节点最近的结点（最后一个小于value的点）,如果当前层< randomLevel,插入新节点。
+         如果随机出来的层数>当前层数，那第i层的head直接指向newNode,不需要有updateNode
+  erase： 从跳表的当前的最大层数 level 层开始查找,跟search类似，如果找到就删掉它。
+```
 [普通平衡树](https://www.acwing.com/problem/content/255/)<br/>
 [滑动窗口最大值](https://leetcode.cn/problems/sliding-window-maximum/description/)<br/>
 [邻值查找](https://www.acwing.com/problem/content/138/)<br/>
+```
+  TreeSet 常用方法
+  higher 后继
+  lower 前驱
+  first firstKey
+  last lastKey
+```
 
 ##### 二分查找
 ```

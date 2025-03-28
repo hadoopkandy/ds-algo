@@ -10,7 +10,7 @@ import java.util.Queue;
  * BFS 拓扑排序 起->终 自顶向下
  * DFS 记忆化搜索 终->起 自底向上
  */
-public class LC329矩阵中的最长递增路径 {
+public class L11_C329矩阵中的最长递增路径 {
     List<List<Integer>> to; //出边数组
     int[] deg; //入度
     int[] bfs_dist; //每个点的最长长度

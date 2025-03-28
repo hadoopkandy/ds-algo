@@ -16,8 +16,8 @@ import java.util.TreeSet;
 public class L04_Main邻值查找 {
 
     public static class Node {
-        long val;
-        int idx;
+        long val;//原始数组的值
+        int idx;//原始数组的下标
 
         public Node(long val, int idx) {
             this.val = val;
@@ -64,9 +64,9 @@ public class L04_Main邻值查找 {
             Node pre = orderSet.lower(cur);
 
             if (next == null) {
-                ans[i] = pre.idx;
+                ans[i] = pre.idx; //后继为空,则取前继
             } else if (pre == null) {
-                ans[i] = next.idx;
+                ans[i] = next.idx;//前继为空,则取后继
             } else if (a[i] - pre.val <= next.val - a[i]) { //与前驱的差值，与后继的差值比较 谁小要谁
                 ans[i] = pre.idx;
             } else {

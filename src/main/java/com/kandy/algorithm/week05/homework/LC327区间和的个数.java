@@ -1,5 +1,10 @@
 package com.kandy.algorithm.week05.homework;
 
+
+/**
+ * https://leetcode.cn/problems/count-of-range-sum/description/
+ * 区间和可以通过前缀和生成
+ */
 public class LC327区间和的个数 {
     public int countRangeSum(int[] nums, int lower, int upper) {
         this.ans = 0;
@@ -42,7 +47,7 @@ public class LC327区间和的个数 {
             while (r <= right && arr[r] - arr[i] <= upper) {
                 r++;
             }
-            // r -l 即为符合条件的个数
+            // r -l 即为符合条件的个数 = (r-1) -l + 1 = r-l
             ans += r - l;
         }
     }
@@ -65,4 +70,19 @@ public class LC327区间和的个数 {
     int ans;
     int lower;
     int upper;
+
+    public static void main(String[] args) {
+        int[] nums = new int[]{-2,5,-1};
+        LC327区间和的个数 solution = new LC327区间和的个数();
+        System.out.println(solution.countRangeSum(nums,-2,2));
+    }
 }
+/*
+      nums = [-2,5,-1]
+前缀和 preSum = [0,-2,3,2]
+nums[0] = preSum[1] - preSum[0] = -2
+nums[1] = preSum[2] - preSum[1] = 5
+nums[2] = preSum[3] - preSum[2] = -1
+区间和[0,2] = preSum[3] - preSum[0] = 2
+ */
+

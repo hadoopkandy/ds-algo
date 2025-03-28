@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LC1122数组的相对排序 {
+public class L02_C1122数组的相对排序 {
     public int[] relativeSortArray(int[] arr1, int[] arr2) {
         //利用哈希表对arr2建立数值到索引的映射
         Map<Integer, Integer> arr2orders = new HashMap<>();
@@ -21,6 +21,7 @@ public class LC1122数组的相对排序 {
         Arrays.sort(res, 0, res.length, (x, y) -> {
             int xPos = arr2orders.containsKey(x) ? arr2orders.get(x) : arr2.length;
             int yPos = arr2orders.containsKey(y) ? arr2orders.get(y) : arr2.length;
+            // 在arr2orders中存在就按照下标排,否则就按照数值排序
             return xPos == yPos ? Integer.compare(x, y) : Integer.compare(xPos, yPos);
         });
 

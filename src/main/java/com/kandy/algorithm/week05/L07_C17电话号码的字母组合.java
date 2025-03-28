@@ -8,7 +8,7 @@ import java.util.List;
  * 状态：digits的index  选的str
  * 当str作为共享变量时，需要还原现场
  */
-public class LC17电话号码的字母组合 {
+public class L07_C17电话号码的字母组合 {
     public List<String> letterCombinations(String digits) {
         this.digits = digits;
         alphabet = new HashMap<>();

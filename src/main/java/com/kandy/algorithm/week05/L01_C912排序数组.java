@@ -7,7 +7,7 @@ import java.util.Arrays;
  * Java实现八大排序算法
  * https://blog.csdn.net/weixin_30342209/article/details/96022153
  */
-public class LC912排序数组 {
+public class L01_C912排序数组 {
     public int[] sortArray(int[] nums) {
         mergeSort(nums, 0, nums.length - 1);
         return nums;
@@ -15,20 +15,23 @@ public class LC912排序数组 {
 
     //选择排序
     //每次从未排序数据中找最小值，放到已排序序列的末尾
+    //leetcode 会超时
     public static void selectSort(int[] nums) {
-        for (int i = 0; i < nums.length - 1; i++) {
-            int k = i;//默认i这个位置是最小的
-            for (int j = i; j < nums.length; j++) {
+        int n = nums.length;
+        if(n <= 1) return;
+        for (int i = 0; i < n -1; i++) {//循环n-1次就可以
+            int minPos = i;//默认i这个位置是最小的
+            for (int j = i; j < n; j++) {
                 //如果找到j位置更小，就更新k
-                if (nums[k] > nums[j]) {
-                    k = j;
+                if (nums[minPos] > nums[j]) {
+                    minPos = j;
                 }
             }
-            //如果i 不是这一轮循环最小的，就交换i 与 最小的k
-            if (i != k) {
-                int temp = nums[i];
-                nums[i] = nums[k];
-                nums[k] = temp;
+            //如果i 不是这一轮循环最小的，就交换i 与 最小的minPos
+            if (i != minPos) {
+                int tmp = nums[i];
+                nums[i] = nums[minPos];
+                nums[minPos] = tmp;
             }
         }
     }
@@ -38,7 +41,13 @@ public class LC912排序数组 {
         if (nums.length == 0) return;
 
         int length = nums.length;
+        /*
+          建堆有2种思路：
+          第一种建堆思路的处理过程是从前往后处理数组数据，并且每个数据插入堆中时，都是从下往上堆化。 参考:com.kandy.algorithm.week03.L12_C23合并K个升序链表
+          第二种实现思路，是从后往前处理数组，并且每个数据都是从上往下堆化。
+         */
         //通过堆化以后，数组的左半部分是较大的节点，左半部分满足大根堆性质，根节点最大
+        //因为叶子节点往下堆化只能自己跟自己比较，所以我们直接从最后一个非叶子节点开始(所以i=length/2-1开始)，依次堆化就行了。
         for (int i = length / 2 - 1; i >= 0; i--) {
             heapifyDown(nums, length, i);
         }
@@ -99,6 +108,7 @@ public class LC912排序数组 {
 
     //插入排序
     //从前到后依次考虑每个未排序数据，在已排序序列中找到合适位置插入
+    //leetcode 会超时
     public static void insertSort(int[] nums) {
         int n = nums.length;
         int target;
@@ -118,18 +128,23 @@ public class LC912排序数组 {
 
     //冒泡排序
     //不断循环扫描，每次查看相邻的元素，如果逆序，则交换
+    //leetcode 会超时
     public static void bubbleSort(int[] nums) {
+        int n = nums.length;
         //外层循环控制比较的次数
-        for (int i = 0; i < nums.length - 1; i++) {
+        for (int i = 0; i < n; i++) {
+            boolean flag = false;//提前退出冒泡循环的标志位
             //内层循环控制到达位置
-            for (int j = 0; j < nums.length; j++) {
+            for (int j = 0; j < n -i - 1; j++) {
                 //前面的元素比后面大就交换
                 if (nums[j] > nums[j + 1]) {
                     int temp = nums[j];
                     nums[j] = nums[j + 1];
                     nums[j + 1] = temp;
+                    flag = true;//表示有数据交换
                 }
             }
+            if(!flag) break; //没有数据交换,说明数组已经达到完全有序,提前退出
         }
     }
 
@@ -218,7 +233,8 @@ public class LC912排序数组 {
 
     public static void main(String[] args) {
         int nums[] = new int[]{3, 5, 8, 1, 2, 9, 4, 7, 6};
-        heapSort(nums);
+//        heapSort(nums);
+        quickSort(nums,0,nums.length-1);
         System.out.println(Arrays.toString(nums));
     }
 

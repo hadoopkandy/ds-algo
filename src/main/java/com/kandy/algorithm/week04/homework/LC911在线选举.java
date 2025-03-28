@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class LC911在线选举 {
-    class TopVotedCandidate {
+   public static class TopVotedCandidate {
         private List<Integer> tops; //预计算
         private int[] times; //二分查找
 
@@ -43,6 +43,18 @@ public class LC911在线选举 {
             }
             return tops.get(right);
         }
+    }
+
+    public static void main(String[] args) {
+        int[] persons = new int[]{0, 1, 1, 0, 0, 1, 0};
+        int[] times = new int[]{0, 5, 10, 15, 20, 25, 30};
+        TopVotedCandidate candidate = new TopVotedCandidate(persons,times);
+        System.out.println(candidate.q(3));// 返回 0 ，在时刻 3 ，票数分布为 [0] ，编号为 0 的候选人领先。
+        System.out.println(candidate.q(12));// 返回 1 ，在时刻 12 ，票数分布为 [0,1,1] ，编号为 1 的候选人领先。
+        System.out.println(candidate.q(25));// 返回 1 ，在时刻 25 ，票数分布为 [0,1,1,0,0,1] ，编号为 1 的候选人领先。（在平局的情况下，1 是最近获得投票的候选人）。
+        System.out.println(candidate.q(15));// 返回 0
+        System.out.println(candidate.q(24));// 返回 0
+        System.out.println(candidate.q(8));// 返回 1
     }
 
 }

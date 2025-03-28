@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 //排序后求中位数
-public class Acwing104货仓选址 {
+public class L05_Acwing104货仓选址 {
     public static void main(String args[]) throws Exception {
         Scanner input = new Scanner(System.in);
         int n = input.nextInt();
@@ -19,3 +19,8 @@ public class Acwing104货仓选址 {
         System.out.println(ans);
     }
 }
+/*
+中位数的概念:
+ 1 2 6 9    建在 2 或 6 都可以
+ 1 2 6 9 10 建在 6这个位置
+ */
