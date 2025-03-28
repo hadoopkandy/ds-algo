@@ -16,7 +16,7 @@ import java.util.List;
  * 蛮力搜索：排列型，每行放的皇后的列号是一个排列，最后验证斜线
  * 剪枝：维护两种斜线(行号+列号、行号-列号)的已用值集合，排序造成重复的分支
  */
-public class LC51N皇后 {
+public class L08_C51N皇后 {
     public List<List<String>> solveNQueens(int n) {
         this.n = n;
         p = new ArrayList<>();

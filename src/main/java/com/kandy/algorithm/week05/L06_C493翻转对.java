@@ -3,7 +3,7 @@ package com.kandy.algorithm.week05;
 /**
  * 在一个数组中统计满足特定大小关系的pair数量，可以考虑基于归并排序求解
  */
-public class LC493翻转对 {
+public class L06_C493翻转对 {
     public int reversePairs(int[] nums) {
         ans = 0;
         mergeSort(nums, 0, nums.length - 1);
@@ -19,13 +19,25 @@ public class LC493翻转对 {
         merge(arr, l, mid, r);
     }
 
+
     //左边：1 3 4 7  右边：0 1 1 2
+    //左边取一个i,右边取一个j,统计nums[i] > 2*nums[j]数量
     void calculate(int[] arr, int left, int mid, int right) {
         // 左边[left, mid]，右边[mid + 1, right]
         int j = mid;
         for (int i = left; i <= mid; i++) {
+            // j停在条件满足
             while (j < right && arr[i] > 2l * arr[j + 1]) j++;
-            ans += j - mid;
+            ans += j - mid; // j - mid = j -(m +1) + 1
+        }
+    }
+    void calculate2(int[] arr, int left, int mid, int right) {
+        // 左边[left, mid]，右边[mid + 1, right]
+        int j = mid + 1;
+        for (int i = left; i <= mid; i++) {
+            // j停在条件不满足
+            while (j <= right && arr[i] > 2l * arr[j]) j++;
+            ans += j - mid -1; // j- 1 -(mid + 1) + 1 = j - mid - 1
         }
     }
 

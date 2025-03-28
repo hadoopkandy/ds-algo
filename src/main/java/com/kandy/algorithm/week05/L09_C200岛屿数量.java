@@ -10,7 +10,7 @@ import java.util.Queue;
  * 200. 岛屿数量
  * 特征：地图类DFS/、判重、方向数组
  */
-public class LC200岛屿数量 {
+public class L09_C200岛屿数量 {
 
     public int numIslands(char[][] grid) {
         m = grid.length;

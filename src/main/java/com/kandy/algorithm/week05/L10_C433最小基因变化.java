@@ -14,7 +14,7 @@ import java.util.Queue;
  * 广搜求层数
  * 点：基因序列  变化一次产生一条边
  */
-public class LC433最小基因变化 {
+public class L10_C433最小基因变化 {
     public int minMutation(String start, String end, String[] bank) {
         HashSet<String> hashBank = new HashSet<>();
         //记录每个点的层数

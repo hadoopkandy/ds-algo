@@ -3,7 +3,7 @@ package com.kandy.algorithm.week05;
 /**
  * 排序后下标是n-k的值是多少
  */
-public class LC215数组中的第K个最大元素 {
+public class L04_C215数组中的第K个最大元素 {
     public int findKthLargest(int[] nums, int k) {
         return quickSort(nums, 0, nums.length - 1, nums.length - k);
     }

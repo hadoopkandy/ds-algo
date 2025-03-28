@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class LC56合并区间 {
+public class L03_C56合并区间 {
     //双关键字排序贪心解法
     public int[][] merge(int[][] intervals) {
         // 双关键字排序
