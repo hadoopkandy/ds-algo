@@ -23,9 +23,10 @@ public class L14_C84柱状图中最大矩形 {
         for (Integer h : heights_with_zero) {
             int accumulated_width = 0;
             //第二步：while (栈顶不满足高度单调性) 累加宽度，出栈   删栈顶、累加宽度、更新答案
+            //栈顶(之前) 高度>=当前高度,单调性破坏,确定了栈顶高度的扩展范围,需要删除栈顶
             while (!s.empty() && s.peek().height >= h) {
-                accumulated_width += s.peek().width;
-                ans = Math.max(ans, accumulated_width * s.peek().height);
+                accumulated_width += s.peek().width;//累加宽度
+                ans = Math.max(ans, accumulated_width * s.peek().height);//更新答案
                 s.pop();
             }
             //第三步：新元素入栈

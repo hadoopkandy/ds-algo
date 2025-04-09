@@ -11,7 +11,7 @@ import java.util.*;
  * while(队尾与新元素不满足单调性) 队尾出队
  * 新元素出队
  */
-public class L15_C239滑动窗口最大值 {
+public class L16_C239滑动窗口最大值 {
 
     public int[] maxSlidingWindow1(int[] nums, int k) {
         int n = nums.length;
@@ -46,7 +46,7 @@ public class L15_C239滑动窗口最大值 {
 
     /**
      * 单调队列解法
-     * 递减队列，不递减，小的就没用，从左边删除 右边进入
+     * 递减的数据结构（不递减，小的就冗余），从左边删除 右边插入、删除的数据结构，所以考虑是双端队列
      *
      * @param nums
      * @param k
@@ -54,12 +54,12 @@ public class L15_C239滑动窗口最大值 {
      */
     public int[] maxSlidingWindow(int[] nums, int k) {
         int[] ans = new int[nums.length - k + 1];
-        //双端队列，存下标（代表时间）
+        //双端队列，存下标（时间递增）,值递减的队列
         Deque<Integer> q = new LinkedList<>();
         for (int i = 0; i < nums.length; i++) {
-            //保证队头合法性
+            //删除出界的选项
             while (!q.isEmpty() && q.getFirst() <= i - k) q.removeFirst();
-            //维护队列单调性，插入新的选项
+            //插入新选项i,维护单调性(值递减)
             while (!q.isEmpty() && nums[q.getLast()] <= nums[i]) q.removeLast();
             q.addLast(i);
             //取队头更新答案
@@ -69,7 +69,7 @@ public class L15_C239滑动窗口最大值 {
     }
 
     public static void main(String[] args) {
-        L15_C239滑动窗口最大值 sol = new L15_C239滑动窗口最大值();
+        L16_C239滑动窗口最大值 sol = new L16_C239滑动窗口最大值();
 
         int[] nums1 = new int[]{5, 3, 4, 1};
         System.out.println(Arrays.toString(sol.maxSlidingWindow(nums1, 3)));

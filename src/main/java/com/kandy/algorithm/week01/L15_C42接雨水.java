@@ -5,7 +5,7 @@ import java.util.Stack;
 /**
  * 42.接雨水
  */
-public class L16_C42接雨水 {
+public class L15_C42接雨水 {
     //横条 单调栈
     public int trap(int[] heights) {
         Stack<Rect> s = new Stack<>();
@@ -31,9 +31,18 @@ public class L16_C42接雨水 {
     }
 
     public static void main(String[] args) {
+        /*
+          0, 1, 0, 2 遍历以后,stack 里只有一个矩形 height = 2,累加宽度width = 4,ans = 1
+          遍历到下一个1,单调性满足,直接入栈 [{height=2,width=4},{height=1,width=1}]
+          遍历到下一个0,单调性满足,直接入栈 [{height=2,width=4},{height=1,width=1},{height=0,width=1}]
+          遍历到下一个1,单调性破坏,考虑栈顶元素 bottom=0 的横块水, ans += 1 *(1-0) =2
+                      单调性破坏,考虑栈顶元素 bottom=1 的横块水, ans += 2 *(1-1) =2
+                      入栈当前height=1,累加宽度width=3,此时stack [{height=2,width=4},{height=1,width=3}]
+          遍历到下一个3,单调性破坏,考虑栈顶元素 bottom=1 的横块水, ans += 3 *(2-1) = 5 [{height=3,width=8}]
+         */
         int[] heights = new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
-        L16_C42接雨水 code = new L16_C42接雨水();
-        final int trap = code.trap2(heights);
+        L15_C42接雨水 code = new L15_C42接雨水();
+        final int trap = code.trap(heights);
         System.out.println(trap);
     }
 
