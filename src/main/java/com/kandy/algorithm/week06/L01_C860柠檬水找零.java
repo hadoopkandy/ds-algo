@@ -6,7 +6,7 @@ import java.util.HashMap;
  * 贪心-决策包容性
  * "零钱兑换"类问题在面值互相成倍数关系时，贪心算法成立
  */
-public class LC860柠檬水找零 {
+public class L01_C860柠檬水找零 {
     public boolean lemonadeChange(int[] bills) {
         coins = new HashMap<>();
         for (int bill : bills) {

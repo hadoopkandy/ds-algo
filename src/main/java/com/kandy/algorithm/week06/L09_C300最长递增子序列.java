@@ -8,7 +8,7 @@ package com.kandy.algorithm.week06;
  * f(i) 表示前i个数构成的以a[i]为结尾的最长上升子序列的长度
  *  f[i] = Math.max(f[i], f[j] + 1);
  */
-public class LC300最长递增子序列 {
+public class L09_C300最长递增子序列 {
     public int lengthOfLIS(int[] nums) {
         int n = nums.length;
         int f[] = new int[n]; // 0~n-1 f[i] 表示以i 结尾的最长长度

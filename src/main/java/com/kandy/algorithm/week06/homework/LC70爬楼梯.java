@@ -2,6 +2,12 @@ package com.kandy.algorithm.week06.homework;
 
 import java.util.Arrays;
 
+/**
+ * 和零钱兑换题比较类似，同样有2种实现思路:
+ * 1.递推实现
+ * 2.记忆化搜索(递归实现)
+ * https://leetcode.cn/problems/climbing-stairs/description/
+ */
 public class LC70爬楼梯 {
     public int climbStairs(int n) {
         return climb(n);

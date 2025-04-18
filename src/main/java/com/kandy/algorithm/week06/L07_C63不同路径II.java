@@ -6,7 +6,7 @@ package com.kandy.algorithm.week06;
  * Top-down： f[i][j] = f[i - 1][j] + f[i][j - 1]  f(i,j) 表示从Start到(i,j)的路径数  （每步只能从上或左来）
  * Bottom-up：f(i,j)=f(i+1,j) + f(i,j+1)  f(i,j) 表示从(i,j)到End的路径数  每步只能往下或往右走
  */
-public class LC63不同路径II {
+public class L07_C63不同路径II {
     // Top-down
     // f(i,j) 表示从Start到(i,j)的路径数  （从上或左来）
     // 如果（i，j）是空地 ,f(i,j)=f(i-1,j)+f(i,j-1) 否则f(i,j)=0
@@ -39,7 +39,7 @@ public class LC63不同路径II {
         return countPaths(obstacleGrid, 0, 0);
     }
 
-    //记忆化搜索（递归、分治思想）
+    //记忆化搜索（递归、分治思想）回溯时累加结果
     int countPaths(int[][] grid, int row, int col) {
         if (!validSquare(grid, row, col)) return 0; //碰到障碍物或者越界
         if (isAtEnd(row, col)) return 1; //到终点

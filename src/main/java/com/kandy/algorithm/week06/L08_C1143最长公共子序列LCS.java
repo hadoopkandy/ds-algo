@@ -11,7 +11,7 @@ package com.kandy.algorithm.week06;
  * 方法一：f[0,0]=0,然后递推时用if语句判断，目标f[m-1,n-1]
  * 方法二：认为字符串下标从1开始，f[i,0]=0与f[0,j]均作为边界，目标f[m,n]
  */
-public class LC1143最长公共子序列LCS {
+public class L08_C1143最长公共子序列LCS {
     //动归边界处理技巧1: 认为字符串下标从1开始，f[i,0]=0与f[0,j]均作为边界，目标f[m,n]
     public int longestCommonSubsequence(String text1, String text2) {
         int m = text1.length();
@@ -61,7 +61,7 @@ public class LC1143最长公共子序列LCS {
         text2 = " " + text2;
         //f[i][0]  f[0][j]初始化为0
         int f[][] = new int[m + 1][n + 1];
-        int preType[][] = new int[m + 1][n + 1];
+        int preType[][] = new int[m + 1][n + 1]; //0 表示从f[i - 1][j]过来,1表示从f[i][j - 1]过来,2表示从f[i - 1][j - 1]过来
 
         for (int i = 1; i <= m; i++) {
             for (int j = 1; j <= n; j++) {

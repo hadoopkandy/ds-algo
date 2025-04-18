@@ -1,6 +1,9 @@
 package com.kandy.algorithm.week06.homework;
 
 
+/**
+ * https://leetcode.cn/problems/number-of-longest-increasing-subsequence/
+ */
 public class LC673最长递增子序列的个数 {
     public int findNumberOfLIS(int[] nums) {
         int n = nums.length;

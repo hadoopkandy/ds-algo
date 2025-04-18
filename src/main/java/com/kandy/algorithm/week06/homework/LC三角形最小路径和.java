@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * Bottom-up：f(i,j)=min(f(i+1,j),f(i+1,j+1)) + triangle(i,j)  f(i,j) 表示从(i,j)到最后一层的最小路径和 每步只能从下面 或右下来
+ * https://leetcode.cn/problems/triangle/description/
  */
 public class LC三角形最小路径和 {
     //Bottom-up 状态数组：二维数组
