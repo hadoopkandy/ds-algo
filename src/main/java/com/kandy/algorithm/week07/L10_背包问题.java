@@ -8,9 +8,9 @@ import java.util.Arrays;
  * f(i,j) 表示从前i个物品中选出了总体积为j的物品放入背包，物品的最大价值和
  * 决策：第i个物品 选或不选
  */
-public class LC01背包问题 {
+public class L10_背包问题 {
     public static void main(String[] args) {
-        LC01背包问题 lc = new LC01背包问题();
+        L10_背包问题 lc = new L10_背包问题();
         int[] weight = {1, 3, 4};
         int[] value = {15, 20, 30};
         int bagsize = 4;
@@ -41,7 +41,7 @@ public class LC01背包问题 {
 
         for (int i = 1; i <= n; i++) {
             for (int j = 0; j <= m; j++)
-                //从f[i-1]拷贝到f[i]
+                //从f[i-1]拷贝到f[i]  这里等于是从f[i-1]拷贝到f[i],相当于在原来的基础上更新,可以省掉i这一维
                 f[i][j] = f[i - 1][j];//不选第i个物品：前i-1个物品，选体积为j  i不要
             for (int j = v[i]; j <= m; j++)  // 或者合并到一个j循环里，要加一个条件j>=v[i]
                 //选第i个物品：前i-1个物品，选出j-vi的体积  选i物品 体积变成j 价值增加wi  j>=vi

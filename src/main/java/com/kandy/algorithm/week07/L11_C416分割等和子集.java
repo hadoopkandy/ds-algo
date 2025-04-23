@@ -5,7 +5,7 @@ package com.kandy.algorithm.week07;
  * f[i][j]前i个数选出一些数，总和是j,是否可行
  * 物品：每个数  体积:nums[i]  价值：没有价值，变成可行性问题
  */
-public class LC416分割等和子集 {
+public class L11_C416分割等和子集 {
     public boolean canPartition(int[] nums) {
         int n = nums.length;
         // Move to 1~n

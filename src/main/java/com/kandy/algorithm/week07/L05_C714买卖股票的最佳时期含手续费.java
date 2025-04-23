@@ -4,7 +4,7 @@ package com.kandy.algorithm.week07;
  * 每次交易含手续费
  * 在买的时候交手续费
  */
-public class LC714买卖股票的最佳时期含手续费 {
+public class L05_C714买卖股票的最佳时期含手续费 {
     public int maxProfit(int[] pricesInput, int fee) {
         int n = pricesInput.length;
 

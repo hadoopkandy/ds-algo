@@ -1,13 +1,11 @@
 package com.kandy.algorithm.week07;
 
 /**
- * 限定交易次数 k=2
+ * 限定交易次数 最多次数为 k
+ * f(i,j,k) 表示第i天结束时，持有j股股票(0或1)已经交易了k次的最大收益
+ * 在买的时候记录交易次数，从k-1变成了k
  */
-public class LC123买卖股票的最佳时机III {
-    public int maxProfit(int[] prices) {
-        return maxProfit(2, prices);
-    }
-
+public class L04_C188买卖股票的最佳时机IV {
     public int maxProfit(int c, int[] pricesInput) {
         int n = pricesInput.length;
 

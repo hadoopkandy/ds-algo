@@ -9,7 +9,7 @@ package com.kandy.algorithm.week07;
  * 思考5：d天冷冻期
  * 思考6：最多持仓t股股票
  */
-public class LC309最佳买卖股票时机含冷冻期 {
+public class L06_C309最佳买卖股票时机含冷冻期 {
     public int maxProfit(int[] pricesInput) {
         int n = pricesInput.length;
 

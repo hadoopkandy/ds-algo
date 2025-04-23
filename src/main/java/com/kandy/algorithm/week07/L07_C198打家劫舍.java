@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * f(i,j) 表示计划偷窃前i座房屋，第i座房屋的闯入情况为j(0 未闯入 1 闯入)时的最大收益
  */
-public class LC198打家劫舍 {
+public class L07_C198打家劫舍 {
     public int rob(int[] numsInput) {
         int n = numsInput.length;
         // Move nums from [0..n-1] to [1..n]

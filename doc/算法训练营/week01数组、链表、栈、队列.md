@@ -33,6 +33,7 @@ Prepend(push front) O(1)
 [反转链表](https://leetcode.cn/problems/reverse-linked-list/description/)<br/>
 [K个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/description/)<br/>
 [邻值查找](https://www.acwing.com/problem/content/description/138/)<br/>
+![邻值查找解题思路](./Main邻值查找.png)
 [环形链表](https://leetcode.cn/problems/linked-list-cycle/description/)<br/>
 [环形链表II](https://leetcode.cn/problems/linked-list-cycle-ii/description)<br/>
 ##### 栈
